@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost/ECR_LATEST_REVAMP/my-api-backend/public/api',
+  baseURL: 'http://betafeet.store/public/api',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

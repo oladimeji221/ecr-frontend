@@ -74,7 +74,10 @@
                                     <li class="nav-item"><router-link to="/insights" class="nav-link">Insights</router-link></li>
                                     <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
 
-                                    <li v-if="isAuthenticated" class="nav-item d-lg-none"><router-link to="/dashboard/profile" class="nav-link">Profile</router-link></li>
+                                    <!-- MOBILE Profile Link (Text) -->
+                                    <li v-if="isAuthenticated" class="nav-item d-lg-none">
+                                        <router-link to="/dashboard/profile" class="nav-link">Profile</router-link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -99,6 +102,7 @@
                                     <!-- end search input -->
                                 </div>
                                 
+                                <!-- DESKTOP Profile Icon Dropdown -->
                                 <div v-if="isAuthenticated" class="header-icon d-none d-lg-flex" :class="{ 'show': isUserDropdownOpen }">
                                     <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
                                         <i class="fas fa-user-circle fs-3"></i>
@@ -183,7 +187,6 @@ onMounted(() => {
   document.body.setAttribute('data-mobile-nav-style', 'full-screen-menu');
   getUser(); // Check user status on mount
 
-  // Initialize Bootstrap collapse components
   const navbarCollapseEl = document.getElementById('navbarNavMain');
   if (navbarCollapseEl) {
     new Collapse(navbarCollapseEl, { toggle: false });

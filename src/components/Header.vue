@@ -74,9 +74,21 @@
                                     <li class="nav-item"><router-link to="/insights" class="nav-link">Insights</router-link></li>
                                     <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
 
-                                    <!-- MOBILE Profile Link (Text) -->
-                                    <li v-if="isAuthenticated" class="nav-item d-lg-none">
-                                        <router-link to="/dashboard/profile" class="nav-link">Profile</router-link>
+                                    <li v-if="isAuthenticated" class="nav-item dropdown dropdown-with-icon-style02" :class="{ 'show': isUserDropdownOpen }">
+                                        <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
+                                            <i class="fas fa-user-circle fs-3"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" :class="{ 'show': isUserDropdownOpen }" aria-labelledby="navbarDropdownMenuLink"> 
+                                            <li><router-link to="/dashboard/blogs" class="dropdown-item"><i class="fas fa-blog me-2"></i>All Blogs</router-link></li>  
+                                            <!-- Admin only items -->
+                                            <li v-if="user?.is_admin"><router-link to="/dashboard/categories" class="dropdown-item"><i class="fas fa-layer-group me-2"></i>All Categories</router-link></li>   
+                                            <li v-if="user?.is_admin"><router-link to="/dashboard/users" class="dropdown-item"><i class="fas fa-users me-2"></i>All Users</router-link></li>
+                                            <li v-if="user?.is_admin"><router-link to="/dashboard/newsletter" class="dropdown-item"><i class="fas fa-envelope me-2"></i>Send Newsletter</router-link></li>  
+                                            <!-- End admin only items -->
+                                            <li><router-link to="/dashboard/profile" class="dropdown-item"><i class="fas fa-user me-2"></i>Profile</router-link></li>                                                                                                                                                                           
+                                            <!-- <hr class="dropdown-divider"> -->
+                                            <li><a href="#" class="dropdown-item" @click.prevent="handleLogout"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>          
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
@@ -101,25 +113,6 @@
                                     </div>
                                     <!-- end search input -->
                                 </div>
-                                
-                                <!-- DESKTOP Profile Icon Dropdown -->
-                                <div v-if="isAuthenticated" class="header-icon d-none d-lg-flex" :class="{ 'show': isUserDropdownOpen }">
-                                    <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
-                                        <i class="fas fa-user-circle fs-3"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" :class="{ 'show': isUserDropdownOpen }" aria-labelledby="navbarDropdownMenuLink"> 
-                                        <li><router-link to="/dashboard/blogs" class="dropdown-item"><i class="fas fa-blog me-2"></i>All Blogs</router-link></li>  
-                                        <!-- Admin only items -->
-                                        <li v-if="user?.is_admin"><router-link to="/dashboard/categories" class="dropdown-item"><i class="fas fa-layer-group me-2"></i>All Categories</router-link></li>   
-                                        <li v-if="user?.is_admin"><router-link to="/dashboard/users" class="dropdown-item"><i class="fas fa-users me-2"></i>All Users</router-link></li>
-                                        <li v-if="user?.is_admin"><router-link to="/dashboard/newsletter" class="dropdown-item"><i class="fas fa-envelope me-2"></i>Send Newsletter</router-link></li>  
-                                        <!-- End admin only items -->
-                                        <li><router-link to="/dashboard/profile" class="dropdown-item"><i class="fas fa-user me-2"></i>Profile</router-link></li>                                                                                                                                                                           
-                                        <!-- <hr class="dropdown-divider"> -->
-                                        <li><a href="#" class="dropdown-item" @click.prevent="handleLogout"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>          
-                                    </ul>
-                                </div>
-
                                 <div class="header-button ms-20px d-none d-xl-inline-block">
                                     <router-link to="/appointment" class="btn btn-rounded btn-transparent-light-gray border-1 btn-medium btn-switch-text text-transform-none">
                                         <span>

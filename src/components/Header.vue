@@ -33,7 +33,7 @@
                                     </div>
                                     <!-- end search input -->
                                 </div>
-                                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMain" aria-controls="navbarNavMain" aria-label="Toggle navigation">
+                                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav-clone" aria-controls="navbarNav-clone" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-line"></span>
                                     <span class="navbar-toggler-line"></span>
                                     <span class="navbar-toggler-line"></span>
@@ -74,21 +74,9 @@
                                     <li class="nav-item"><router-link to="/insights" class="nav-link">Insights</router-link></li>
                                     <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
 
-                                    <li v-if="isAuthenticated" class="nav-item dropdown dropdown-with-icon-style02" :class="{ 'show': isUserDropdownOpen }">
-                                        <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
-                                            <i class="fas fa-user-circle fs-3"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" :class="{ 'show': isUserDropdownOpen }" aria-labelledby="navbarDropdownMenuLink"> 
-                                            <li><router-link to="/dashboard/blogs" class="dropdown-item"><i class="fas fa-blog me-2"></i>All Blogs</router-link></li>  
-                                            <!-- Admin only items -->
-                                            <li v-if="user?.is_admin"><router-link to="/dashboard/categories" class="dropdown-item"><i class="fas fa-layer-group me-2"></i>All Categories</router-link></li>   
-                                            <li v-if="user?.is_admin"><router-link to="/dashboard/users" class="dropdown-item"><i class="fas fa-users me-2"></i>All Users</router-link></li>
-                                            <li v-if="user?.is_admin"><router-link to="/dashboard/newsletter" class="dropdown-item"><i class="fas fa-envelope me-2"></i>Send Newsletter</router-link></li>  
-                                            <!-- End admin only items -->
-                                            <li><router-link to="/dashboard/profile" class="dropdown-item"><i class="fas fa-user me-2"></i>Profile</router-link></li>                                                                                                                                                                           
-                                            <!-- <hr class="dropdown-divider"> -->
-                                            <li><a href="#" class="dropdown-item" @click.prevent="handleLogout"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>          
-                                        </ul>
+                                    <!-- MOBILE Profile Link (Text) -->
+                                    <li v-if="isAuthenticated" class="nav-item d-lg-none">
+                                        <router-link to="/dashboard/profile" class="nav-link">Profile</router-link>
                                     </li>
                                 </ul>
                             </div>
@@ -113,6 +101,25 @@
                                     </div>
                                     <!-- end search input -->
                                 </div>
+                                
+                                <!-- DESKTOP Profile Icon Dropdown -->
+                                <div v-if="isAuthenticated" class="header-icon d-none d-lg-flex" :class="{ 'show': isUserDropdownOpen }">
+                                    <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
+                                        <i class="fas fa-user-circle fs-3"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" :class="{ 'show': isUserDropdownOpen }" aria-labelledby="navbarDropdownMenuLink"> 
+                                        <li><router-link to="/dashboard/blogs" class="dropdown-item"><i class="fas fa-blog me-2"></i>All Blogs</router-link></li>  
+                                        <!-- Admin only items -->
+                                        <li v-if="user?.is_admin"><router-link to="/dashboard/categories" class="dropdown-item"><i class="fas fa-layer-group me-2"></i>All Categories</router-link></li>   
+                                        <li v-if="user?.is_admin"><router-link to="/dashboard/users" class="dropdown-item"><i class="fas fa-users me-2"></i>All Users</router-link></li>
+                                        <li v-if="user?.is_admin"><router-link to="/dashboard/newsletter" class="dropdown-item"><i class="fas fa-envelope me-2"></i>Send Newsletter</router-link></li>  
+                                        <!-- End admin only items -->
+                                        <li><router-link to="/dashboard/profile" class="dropdown-item"><i class="fas fa-user me-2"></i>Profile</router-link></li>                                                                                                                                                                           
+                                        <!-- <hr class="dropdown-divider"> -->
+                                        <li><a href="#" class="dropdown-item" @click.prevent="handleLogout"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>          
+                                    </ul>
+                                </div>
+
                                 <div class="header-button ms-20px d-none d-xl-inline-block">
                                     <router-link to="/appointment" class="btn btn-rounded btn-transparent-light-gray border-1 btn-medium btn-switch-text text-transform-none">
                                         <span>
@@ -134,7 +141,7 @@
 import { onMounted, ref } from 'vue';
 import { useAuth } from '../composables/useAuth';
 import { useRouter } from 'vue-router';
-import { Collapse } from 'bootstrap'; // Import Bootstrap's Collapse
+import { Collapse } from 'bootstrap'; 
 
 const { isAuthenticated, logout, getUser, user } = useAuth();
 const router = useRouter();
@@ -177,15 +184,68 @@ const handleSearch = (e) => {
 };
 
 onMounted(() => {
-  document.body.setAttribute('data-mobile-nav-style', 'full-screen-menu');
-  getUser(); // Check user status on mount
+    document.body.setAttribute('data-mobile-nav-style', 'full-screen-menu');
+    getUser(); 
 
-  const navbarCollapseEl = document.getElementById('navbarNavMain');
-  if (navbarCollapseEl) {
-    new Collapse(navbarCollapseEl, { toggle: false });
-  }
+    // Manual initialization of the template's mobile menu logic
+    // This ensures the "Purple Overlay" (cloned menu) exists even if main.js ran before Vue rendered.
+    if (typeof window.$ !== 'undefined') {
+        const $ = window.$;
+        const mobileStyle = 'full-screen-menu';
+        
+        // Only run if the clone container doesn't exist yet
+        if (!$('.navbar-' + mobileStyle + '-inner').length) {
+            
+            // Wrap content if needed (logic from main.js)
+            if (!$('.page-layout').length) {
+                if (!$('.box-layout').length && mobileStyle == 'modern') {
+                    $('section, footer').wrapAll('<div class="page-layout"></div>');
+                } else {
+                    $('section').wrapAll('<div class="page-layout"></div>');
+                }
+            }
+
+            // Clone the toggler and menu
+            const userIsAdmin = user.value?.is_admin || false; // Capture current state if needed
+            
+            // Clone Toggler
+            // We use .navbar-toggler from this component
+            // Note: We need to clone it deep to keep icon spans
+            // But we must remove the Vue listeners from the clone to avoid confusion, 
+            // though jQuery clone(true) copies events, standard clone() does not.
+            // main.js uses clone(true), but we'll use clone() to be safer with Vue.
+            $('.navbar .navbar-toggler').clone(false).addClass('navbar-toggler-clone').insertAfter('.page-layout');
+            
+            // Clone Menu
+            $('.navbar .navbar-collapse').clone(false).addClass('navbar-collapse-clone').attr('id', 'navbarNav-clone').insertAfter('.page-layout');
+
+            // Wrap them in the inner container
+            $('.navbar-toggler-clone, .navbar-collapse-clone').wrapAll('<div class="navbar-' + mobileStyle + '-inner"></div>');
+            
+            // Setup attributes on the CLONE's toggler (not our Vue one)
+            $('.navbar-toggler-clone').attr('data-bs-toggle', 'collapse').attr('data-bs-target', '#navbarNav-clone');
+            
+            // Re-initialize custom scrollbar if needed (from main.js)
+            if (typeof $.fn.mCustomScrollbar === 'function') {
+                 if ($('.navbar-collapse-clone').length) {
+                     var scrollOptions = $('.navbar-collapse-clone').attr('data-scroll-options') || '{ "theme": "light" }';
+                     if (typeof (scrollOptions) !== 'undefined' && scrollOptions !== null) {
+                         scrollOptions = $.parseJSON(scrollOptions);
+                         $('.navbar-collapse-clone').mCustomScrollbar(scrollOptions);
+                     }
+                 }
+            }
+        }
+    }
 });
 </script>
 
 <style scoped>
+@media (max-width: 991px) {
+    /* Force hide the original menu to prevent it from showing up 
+       underneath the full-screen clone */
+    #navbarNavMain {
+        display: none !important;
+    }
+}
 </style>

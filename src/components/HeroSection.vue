@@ -19,7 +19,7 @@
         </div>
     </section> -->
 
-      <section class="p-0 full-screen ipad-top-space-margin position-relative overflow-hidden sm-h-auto">
+      <section class="p-0 full-screen ipad-top-space-margin position-relative overflow-hidden sm-h-500px">
             <div class="container-fluid p-0 h-100 position-relative">
                 <div class="row h-100 g-0">
                     <div class="col-12 col-md-6 bg-base-color bg-sliding-line-dark-gray d-flex justify-content-center flex-column p-10 position-relative xl-p-6 md-p-5 sm-ps-30px sm-pe-30px  sm-pt-50px sm-pb-50px order-2 order-md-1">

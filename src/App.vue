@@ -13,7 +13,7 @@ import { useAuth } from './composables/useAuth';
 
 const route = useRoute();
 const router = useRouter();
-const { getUser, logout } = useAuth();
+const { getUser, logout, isAuthenticated } = useAuth(); // Add isAuthenticated
 
 import InsightLayout from './layouts/InsightLayout.vue';
 
@@ -21,6 +21,7 @@ const layouts = {
   MainLayout,
   AuthLayout,
   InsightLayout,
+  // ... other layouts
 };
 
 const layout = computed(() => {
@@ -32,10 +33,14 @@ let inactivityTimer;
 
 const resetInactivityTimer = () => {
   clearTimeout(inactivityTimer);
-  inactivityTimer = setTimeout(() => {
-    logout();
-    router.push({ name: 'Login', query: { inactive: 'true' } });
-  }, 30 * 60 * 1000); // 30 minutes
+
+  // Only start the timer if the user is logged in
+  if (isAuthenticated.value) { 
+    inactivityTimer = setTimeout(() => {
+        logout();
+        router.push({ name: 'Login', query: { inactive: 'true' } });
+    }, 30 * 60 * 1000); // 30 minutes
+  }
 };
 
 const setupInactivityListeners = () => {

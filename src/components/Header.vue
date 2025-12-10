@@ -17,10 +17,10 @@
                             <!-- start mobile visible icons -->
                             <div class="d-flex align-items-center d-lg-none">
                                 <div class="header-search-icon icon me-3">
-                                    <a href="demo-corporate-services.html#" class="search-form-icon header-search-form "><i class="fa-solid fa-magnifying-glass"></i></a>
+                                    <button type="button" class="search-form-icon header-search-form border-0 bg-transparent p-0" @click="openSearchModal"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     <!-- start search input -->
                                     <div class="search-form-wrapper">
-                                        <button title="Close" type="button" class="search-close">×</button>
+                                        <button title="Close" type="button" class="search-close" @click="closeSearchModal">×</button>
                                         <form id="search-form-mobile" role="search" method="get" class="search-form text-left" @submit.prevent="handleSearch">
                                             <div class="search-form-box">
                                                 <h2 class="text-dark-gray text-center fw-600 mb-4 ls-minus-1px">What are you looking for?</h2>
@@ -33,7 +33,7 @@
                                     </div>
                                     <!-- end search input -->
                                 </div>
-                                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMain" aria-controls="navbarNavMain" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-line"></span>
                                     <span class="navbar-toggler-line"></span>
                                     <span class="navbar-toggler-line"></span>
@@ -41,7 +41,7 @@
                                 </button>
                             </div>
                             <!-- end mobile visible icons -->
-                            <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> 
+                            <div class="collapse navbar-collapse justify-content-center" id="navbarNavMain"> 
                                 <ul class="navbar-nav"> 
                                     
                                     <li class="nav-item dropdown dropdown-with-icon-style02">
@@ -74,22 +74,7 @@
                                     <li class="nav-item"><router-link to="/insights" class="nav-link">Insights</router-link></li>
                                     <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
 
-                                    <li v-if="isAuthenticated" class="nav-item dropdown dropdown-with-icon-style02" :class="{ 'show': isUserDropdownOpen }">
-                                        <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
-                                            <i class="fas fa-user-circle fs-3"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" :class="{ 'show': isUserDropdownOpen }" aria-labelledby="navbarDropdownMenuLink"> 
-                                            <li><router-link to="/dashboard/blogs" class="dropdown-item"><i class="fas fa-blog me-2"></i>All Blogs</router-link></li>  
-                                            <!-- Admin only items -->
-                                            <li v-if="user?.is_admin"><router-link to="/dashboard/categories" class="dropdown-item"><i class="fas fa-layer-group me-2"></i>All Categories</router-link></li>   
-                                            <li v-if="user?.is_admin"><router-link to="/dashboard/users" class="dropdown-item"><i class="fas fa-users me-2"></i>All Users</router-link></li>
-                                            <li v-if="user?.is_admin"><router-link to="/dashboard/newsletter" class="dropdown-item"><i class="fas fa-envelope me-2"></i>Send Newsletter</router-link></li>  
-                                            <!-- End admin only items -->
-                                            <li><router-link to="/dashboard/profile" class="dropdown-item"><i class="fas fa-user me-2"></i>Profile</router-link></li>                                                                                                                                                                           
-                                            <!-- <hr class="dropdown-divider"> -->
-                                            <li><a href="#" class="dropdown-item" @click.prevent="handleLogout"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>          
-                                        </ul>
-                                    </li>
+                                    <li v-if="isAuthenticated" class="nav-item d-lg-none"><router-link to="/dashboard/profile" class="nav-link">Profile</router-link></li>
                                 </ul>
                             </div>
                         </div>
@@ -97,10 +82,10 @@
                          <div class="col-auto col-xl-3 col-lg-2 text-end md-pe-0">
                             <div class="header-icon d-none d-lg-flex">
                                 <div class="header-search-icon icon">
-                                    <a href="demo-corporate-services.html#" class="search-form-icon header-search-form "><i class="fa-solid fa-magnifying-glass"></i></a>
+                                    <button type="button" class="search-form-icon header-search-form border-0 bg-transparent p-0" @click="openSearchModal"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     <!-- start search input -->
                                     <div class="search-form-wrapper">
-                                        <button title="Close" type="button" class="search-close">×</button>
+                                        <button title="Close" type="button" class="search-close" @click="closeSearchModal">×</button>
                                         <form id="search-form" role="search" method="get" class="search-form text-left" @submit.prevent="handleSearch">
                                             <div class="search-form-box">
                                                 <h2 class="text-dark-gray text-center fw-600 mb-4 ls-minus-1px">What are you looking for?</h2>
@@ -113,6 +98,24 @@
                                     </div>
                                     <!-- end search input -->
                                 </div>
+                                
+                                <div v-if="isAuthenticated" class="header-icon d-none d-lg-flex" :class="{ 'show': isUserDropdownOpen }">
+                                    <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleUserDropdown" id="navbarDropdownMenuLink" role="button" :aria-expanded="isUserDropdownOpen">
+                                        <i class="fas fa-user-circle fs-3"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" :class="{ 'show': isUserDropdownOpen }" aria-labelledby="navbarDropdownMenuLink"> 
+                                        <li><router-link to="/dashboard/blogs" class="dropdown-item"><i class="fas fa-blog me-2"></i>All Blogs</router-link></li>  
+                                        <!-- Admin only items -->
+                                        <li v-if="user?.is_admin"><router-link to="/dashboard/categories" class="dropdown-item"><i class="fas fa-layer-group me-2"></i>All Categories</router-link></li>   
+                                        <li v-if="user?.is_admin"><router-link to="/dashboard/users" class="dropdown-item"><i class="fas fa-users me-2"></i>All Users</router-link></li>
+                                        <li v-if="user?.is_admin"><router-link to="/dashboard/newsletter" class="dropdown-item"><i class="fas fa-envelope me-2"></i>Send Newsletter</router-link></li>  
+                                        <!-- End admin only items -->
+                                        <li><router-link to="/dashboard/profile" class="dropdown-item"><i class="fas fa-user me-2"></i>Profile</router-link></li>                                                                                                                                                                           
+                                        <!-- <hr class="dropdown-divider"> -->
+                                        <li><a href="#" class="dropdown-item" @click.prevent="handleLogout"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>          
+                                    </ul>
+                                </div>
+
                                 <div class="header-button ms-20px d-none d-xl-inline-block">
                                     <router-link to="/appointment" class="btn btn-rounded btn-transparent-light-gray border-1 btn-medium btn-switch-text text-transform-none">
                                         <span>
@@ -134,6 +137,7 @@
 import { onMounted, ref } from 'vue';
 import { useAuth } from '../composables/useAuth';
 import { useRouter } from 'vue-router';
+import { Collapse } from 'bootstrap'; // Import Bootstrap's Collapse
 
 const { isAuthenticated, logout, getUser, user } = useAuth();
 const router = useRouter();
@@ -148,15 +152,29 @@ const handleLogout = async () => {
     router.push('/login');
 };
 
+const openSearchModal = () => {
+  if (typeof window !== 'undefined' && window.$) {
+    window.$('body').addClass('show-search-popup');
+  } else {
+    document.body.classList.add('show-search-popup');
+  }
+};
+
+const closeSearchModal = () => {
+  if (typeof window !== 'undefined' && window.$) {
+    window.$('body').removeClass('show-search-popup');
+  } else {
+    document.body.classList.remove('show-search-popup');
+  }
+};
+
 const handleSearch = (e) => {
     e.preventDefault();
     const searchInput = e.target.querySelector('input[name="s"]');
     const searchTerm = searchInput?.value?.trim();
     
     if (searchTerm) {
-        // Close search modal
-        document.body.classList.remove('show-search-popup');
-        // Navigate to search results page
+        closeSearchModal();
         router.push({ path: '/search', query: { q: searchTerm } });
     }
 };
@@ -164,6 +182,12 @@ const handleSearch = (e) => {
 onMounted(() => {
   document.body.setAttribute('data-mobile-nav-style', 'full-screen-menu');
   getUser(); // Check user status on mount
+
+  // Initialize Bootstrap collapse components
+  const navbarCollapseEl = document.getElementById('navbarNavMain');
+  if (navbarCollapseEl) {
+    new Collapse(navbarCollapseEl, { toggle: false });
+  }
 });
 </script>
 

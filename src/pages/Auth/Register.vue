@@ -121,6 +121,10 @@ const togglePasswordVisibility = () => {
                                                                     <option value="training">Training</option>
                                                                     <option value="marketing">Marketing</option>
                                                                     <option value="development">Development</option>
+                                                                    <option value="data_analytics">Data Analytics</option>
+                                                                    <option value="admin_and_operations">Admin and Operations</option>
+                                                                    <option value="sales">Sales</option>
+                                                                    <option value="management">Management</option>
                                                                 </select>
                                                             </div>
                                                         </div>

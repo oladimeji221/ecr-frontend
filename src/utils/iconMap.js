@@ -1,0 +1,45 @@
+// Icon mapping from Feather to Font Awesome
+export const iconMap = {
+    'feather-airplay': 'fas fa-tv',
+    'feather-cast': 'fas fa-broadcast-tower',
+    'feather-send': 'fas fa-paper-plane',
+    'feather-at-sign': 'fas fa-at',
+    'feather-dollar-sign': 'fas fa-dollar-sign',
+    'feather-users': 'fas fa-users',
+    'feather-alert-circle': 'fas fa-exclamation-circle',
+    'feather-briefcase': 'fas fa-briefcase',
+    'feather-layout': 'fas fa-th-large',
+    'feather-settings': 'fas fa-cog',
+    'feather-power': 'fas fa-power-off',
+    'feather-life-buoy': 'fas fa-life-ring',
+    'feather-chevron-right': 'fas fa-chevron-right',
+    'feather-sunrise': 'fas fa-sun',
+    'feather-command': 'fas fa-terminal',
+    'feather-align-left': 'fas fa-align-left',
+    'feather-arrow-right': 'fas fa-arrow-right',
+    'feather-arrow-left': 'fas fa-arrow-left',
+    'feather-search': 'fas fa-search',
+    'feather-bell': 'fas fa-bell',
+    'feather-user': 'fas fa-user',
+    'feather-log-out': 'fas fa-sign-out-alt',
+    'feather-plus': 'fas fa-plus',
+    'feather-link-2': 'fas fa-link',
+    'feather-layers': 'fas fa-layer-group',
+    'feather-cpu': 'fas fa-microchip',
+    'feather-bluetooth': 'fas fa-bluetooth',
+    'feather-check-square': 'fas fa-check-square',
+    'feather-bold': 'fas fa-bold',
+    'feather-bar-chart-2': 'fas fa-chart-bar',
+    'feather-feather': 'fas fa-feather',
+    'feather-shield': 'fas fa-shield-alt',
+    'feather-shopping-cart': 'fas fa-shopping-cart',
+    'feather-book': 'fas fa-book',
+    'feather-star': 'fas fa-star',
+    'feather-file-plus': 'fas fa-file-plus',
+    'feather-user-plus': 'fas fa-user-plus',
+};
+
+// Function to convert feather icon class to font awesome
+export function convertIcon(featherClass) {
+    return iconMap[featherClass] || 'fas fa-circle';
+}

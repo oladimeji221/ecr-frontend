@@ -34,6 +34,19 @@ const register = async (userData) => {
   return response.data;
 };
 
+const registerGuest = async (data) => {
+  // Note: When sending FormData, the browser automatically sets the Content-Type header
+  await api.post('guests/register', data);
+};
+
+const guestLogin = async (credentials) => {
+  const response = await api.post('guests/login', credentials);
+  const token = response.data.token;
+  localStorage.setItem('authToken', token);
+  api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  user.value = response.data.user;
+};
+
 const logout = async () => {
   try {
     await api.post('/logout');
@@ -45,22 +58,18 @@ const logout = async () => {
 };
 
 const updateUser = async (userData) => {
-    let response;
-    // Check if userData is a FormData instance
-    if (userData instanceof FormData) {
-        // Use POST for multipart/form-data with method spoofing
-        userData.append('_method', 'PUT');
-        response = await api.post('/user', userData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-    } else {
-        // Use PUT for regular JSON data
-        response = await api.put('/user', userData);
-    }
-    user.value = response.data;
-    return response.data;
+  let response;
+  // Check if userData is a FormData instance
+  if (userData instanceof FormData) {
+    // Use POST for multipart/form-data with method spoofing
+    userData.append('_method', 'PUT');
+    response = await api.post('/user', userData);
+  } else {
+    // Use PUT for regular JSON data
+    response = await api.put('/user', userData);
+  }
+  user.value = response.data;
+  return response.data;
 };
 
 
@@ -70,6 +79,8 @@ export function useAuth() {
     isAuthenticated,
     login,
     register,
+    registerGuest,
+    guestLogin,
     logout,
     getUser,
     updateUser,

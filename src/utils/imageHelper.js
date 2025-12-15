@@ -17,3 +17,4 @@ export function getImageUrl(imagePath) {
   return `http://localhost:8000/storage/${imagePath}`;
 }
 
+

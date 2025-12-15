@@ -2476,7 +2476,7 @@ textarea.form-control-lg {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
 }
 
-.form-check {
+/* .form-check {
     display: block;
     min-height: 1.3125rem;
     padding-left: 1.612em;
@@ -2486,9 +2486,9 @@ textarea.form-control-lg {
 .form-check .form-check-input {
     float: left;
     margin-left: -1.612em
-}
+} */
 
-.form-check-reverse {
+/* .form-check-reverse {
     padding-right: 1.612em;
     padding-left: 0;
     text-align: right
@@ -2498,9 +2498,9 @@ textarea.form-control-lg {
     float: right;
     margin-right: -1.612em;
     margin-left: 0
-}
+} */
 
-.form-check-input {
+/* .form-check-input {
     --bs-form-check-bg: var(--bs-secondary-bg);
     flex-shrink: 0;
     width: 1.112em;
@@ -2565,9 +2565,9 @@ textarea.form-control-lg {
 .form-check-input[disabled]~.form-check-label {
     cursor: default;
     opacity: .5
-}
+} */
 
-.form-switch {
+/* .form-switch {
     padding-left: 2.5em
 }
 
@@ -2609,7 +2609,7 @@ textarea.form-control-lg {
 .form-check-inline {
     display: inline-block;
     margin-right: 1rem
-}
+} */
 
 .btn-check {
     position: absolute;
@@ -2624,9 +2624,9 @@ textarea.form-control-lg {
     opacity: .65
 }
 
-[data-bs-theme=dark] .form-switch .form-check-input:not(:checked):not(:focus) {
+/* [data-bs-theme=dark] .form-switch .form-check-input:not(:checked):not(:focus) {
     --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 0.25%29'/%3e%3c/svg%3e")
-}
+} */
 
 .form-range {
     width: 100%;
@@ -3010,7 +3010,7 @@ textarea.form-control.is-valid {
     width: calc(3rem + calc(1.5em + .94rem))
 }
 
-.form-check-input.is-valid,
+/* .form-check-input.is-valid,
 .was-validated .form-check-input:valid {
     border-color: var(--bs-form-valid-border-color)
 }
@@ -3032,7 +3032,7 @@ textarea.form-control.is-valid {
 
 .form-check-inline .form-check-input~.valid-feedback {
     margin-left: .5em
-}
+} */
 
 .input-group>.form-control:not(:focus).is-valid,
 .input-group>.form-floating:not(:focus-within).is-valid,
@@ -3120,7 +3120,7 @@ textarea.form-control.is-invalid {
     width: calc(3rem + calc(1.5em + .94rem))
 }
 
-.form-check-input.is-invalid,
+/* .form-check-input.is-invalid,
 .was-validated .form-check-input:invalid {
     border-color: var(--bs-form-invalid-border-color)
 }
@@ -3142,7 +3142,7 @@ textarea.form-control.is-invalid {
 
 .form-check-inline .form-check-input~.invalid-feedback {
     margin-left: .5em
-}
+} */
 
 .input-group>.form-control:not(:focus).is-invalid,
 .input-group>.form-floating:not(:focus-within).is-invalid,

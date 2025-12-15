@@ -9,19 +9,19 @@ import { computed, onMounted, watch, onBeforeUnmount } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import MainLayout from './layouts/MainLayout.vue';
 import AuthLayout from './layouts/AuthLayout.vue';
+import InsightLayout from './layouts/InsightLayout.vue';
+import GuestDashboardLayout from './layouts/GuestDashboardLayout.vue';
 import { useAuth } from './composables/useAuth';
 
 const route = useRoute();
 const router = useRouter();
 const { getUser, logout, isAuthenticated } = useAuth(); // Add isAuthenticated
 
-import InsightLayout from './layouts/InsightLayout.vue';
-
 const layouts = {
   MainLayout,
   AuthLayout,
   InsightLayout,
-  // ... other layouts
+  GuestDashboardLayout,
 };
 
 const layout = computed(() => {
@@ -93,16 +93,24 @@ function removeDashboardAssets() {
   removeEl('dashboard-main-js');
 }
 
+const handleAssetLoading = (path) => {
+    // Load main dashboard assets only for /dashboard routes, excluding /guest dashboard
+    if (path.startsWith('/dashboard') && !path.startsWith('/guest')) {
+        addDashboardAssets();
+    } else {
+        removeDashboardAssets();
+    }
+};
+
 onMounted(() => {
   getUser();
-  if (route.path.startsWith('/dashboard')) addDashboardAssets();
+  handleAssetLoading(route.path);
   setupInactivityListeners();
   resetInactivityTimer();
 });
 
-watch(() => route.path, (p) => {
-  if (p.startsWith('/dashboard')) addDashboardAssets();
-  else removeDashboardAssets();
+watch(() => route.path, (newPath) => {
+    handleAssetLoading(newPath);
 });
 
 onBeforeUnmount(() => {

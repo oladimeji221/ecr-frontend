@@ -59,23 +59,7 @@
                         <div class="swiper h-100 banner-slider sm-h-450px swiper-light-pagination" data-slider-options='{ "slidesPerView": 1, "loop": true, "pagination": { "el": ".swiper-pagination-bullets", "clickable": true }, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "autoplay": { "delay": 4000, "stopOnLastSlide": true, "disableOnInteraction": false },"keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "fade" }'>
                             <div class="swiper-wrapper">
 
-                                <!-- <div class="swiper-slide">
-                                    <a href="https://ecracademy.com" target="_blank" class="d-block w-100 h-100">
-                                        <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/ecr_academy_1.png');">
-                                            <div class="dark-overlay"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                               
-                                <div class="swiper-slide">
-                                    <a href="https://qikpharma.com" target="_blank" class="d-block w-100 h-100">
-                                        <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/qikpharma.png');">
-                                            <div class="dark-overlay"></div>
-                                        </div>
-                                    </a>
-                                </div> -->
+                             
                                 <div class="swiper-slide">
                                     <a href="https://checkartisan.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
@@ -84,22 +68,23 @@
                                         </div>
                                     </a>
                                 </div>
-                                <!-- <div class="swiper-slide">
-                                    <a href="http://bookamia.com/" target="_blank" class="d-block w-100 h-100">
+                                 <div class="swiper-slide">
+                                    <a href="https://checkartisan.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/bookamia.png');">
+                                             style="background-image:url('/images/products/checkartisan.png');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>
                                 </div>
-                                  <div class="swiper-slide">
-                                    <a href="https://jacanabuilders.com/" target="_blank" class="d-block w-100 h-100">
+                                 <div class="swiper-slide">
+                                    <a href="https://checkartisan.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/jacana_builders.png');">
+                                             style="background-image:url('/images/products/checkartisan.png');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>
-                                </div> -->
+                                </div>
+                                
                             </div>
                            
                         </div>

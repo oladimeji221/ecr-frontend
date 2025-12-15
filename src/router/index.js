@@ -25,8 +25,14 @@ import CyberSecuritySolution from '../pages/services/CyberSecuritySolution.vue'
 
 import Login from '../pages/Auth/Login.vue'
 import Register from '../pages/Auth/Register.vue'
+import GuestRegister from '../pages/Auth/GuestRegister.vue'
+import GuestLogin from '../pages/Auth/GuestLogin.vue'
 import ForgotPassword from '../pages/Auth/ForgotPassword.vue'
 import ResetPassword from '../pages/Auth/ResetPassword.vue'
+
+// Guest Dashboard
+import GuestDashboardLayout from '../layouts/GuestDashboardLayout.vue'
+import GuestDashboard from '../pages/GuestDashboard/Overview.vue'
 
 const routes = [
   {
@@ -119,17 +125,17 @@ const routes = [
     component: Services,
     meta: { layout: 'MainLayout' }
   },
-              {
-                  path: '/insights/:slug',
-                  name: 'SingleInsights',
-                  component: SingleInsights,
-                  meta: { layout: 'InsightLayout' }
-              },            {
-                path: '/dashboard/blogs',
-                name: 'dashboard.blogs',
-                component: () => import('../pages/Dashboard/Blogs.vue'),
-                meta: { requiresAuth: true }
-            },
+  {
+    path: '/insights/:slug',
+    name: 'SingleInsights',
+    component: SingleInsights,
+    meta: { layout: 'InsightLayout' }
+  }, {
+    path: '/dashboard/blogs',
+    name: 'dashboard.blogs',
+    component: () => import('../pages/Dashboard/Blogs.vue'),
+    meta: { requiresAuth: true }
+  },
   {
     path: '/dashboard/categories',
     name: 'Categories',
@@ -148,24 +154,24 @@ const routes = [
     component: ManageComments,
     meta: { layout: 'MainLayout', requiresAuth: true, requiresAdmin: true }
   },
-            {
-                path: '/dashboard/profile',
-                name: 'dashboard.profile',
-                component: () => import('../pages/Dashboard/Profile.vue'),
-                meta: { requiresAuth: true }
-            },
-            {
-                path: '/dashboard/users',
-                name: 'dashboard.users',
-                component: () => import('../pages/Dashboard/AllUsers.vue'),
-                meta: { requiresAuth: true, requiresAdmin: true }
-            },
-            {
-                path: '/dashboard/newsletter',
-                name: 'dashboard.newsletter',
-                component: () => import('../pages/Dashboard/Newsletter.vue'),
-                meta: { requiresAuth: true, requiresAdmin: true }
-            },
+  {
+    path: '/dashboard/profile',
+    name: 'dashboard.profile',
+    component: () => import('../pages/Dashboard/Profile.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/dashboard/users',
+    name: 'dashboard.users',
+    component: () => import('../pages/Dashboard/AllUsers.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/dashboard/newsletter',
+    name: 'dashboard.newsletter',
+    component: () => import('../pages/Dashboard/Newsletter.vue'),
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
   // Auth routes
   {
     path: '/login',
@@ -178,6 +184,42 @@ const routes = [
     name: 'Register',
     component: Register,
     meta: { layout: 'AuthLayout' }
+  },
+  {
+    path: '/guest-register',
+    name: 'GuestRegister',
+    component: GuestRegister,
+    meta: { layout: 'GuestDashboardLayout' }
+  },
+  {
+    path: '/guest-login',
+    name: 'GuestLogin',
+    component: GuestLogin,
+    meta: { layout: 'GuestDashboardLayout' }
+  },
+  // Guest Dashboard Routes - All nested routes automatically use GuestDashboardLayout
+  {
+    path: '/guest',
+    meta: { layout: 'GuestDashboardLayout' },
+    children: [
+      {
+        path: 'dashboard',
+        name: 'GuestDashboard',
+        component: GuestDashboard,
+      },
+      // Add more guest dashboard pages here
+      // Example:
+      // {
+      //   path: 'profile',
+      //   name: 'GuestProfile',
+      //   component: () => import('../pages/GuestDashboard/Profile.vue'),
+      // },
+      // {
+      //   path: 'settings',
+      //   name: 'GuestSettings',
+      //   component: () => import('../pages/GuestDashboard/Settings.vue'),
+      // },
+    ]
   },
   {
     path: '/forgot-password',
@@ -201,7 +243,7 @@ const router = createRouter({
     // If there's a saved position (browser back/forward), use it
     if (savedPosition) {
       return savedPosition
-    } 
+    }
     // If there's a hash, scroll to the element with that ID
     else if (to.hash) {
       return {
@@ -227,10 +269,10 @@ router.beforeEach(async (to, from, next) => {
   // Check if route requires authentication (all /dashboard routes)
   if (to.meta.requiresAuth || to.path.startsWith('/dashboard')) {
     const { isAuthenticated, getUser, user } = useAuth();
-    
+
     // Ensure we have the latest user data
     await getUser();
-    
+
     if (!isAuthenticated.value) {
       // Redirect to login if not authenticated
       next({ name: 'Login', query: { redirect: to.fullPath } });

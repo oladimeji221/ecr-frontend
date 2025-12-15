@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useAuth } from '../../composables/useAuth';
 import { useRouter } from 'vue-router';
 
@@ -8,12 +8,39 @@ const router = useRouter();
 
 const formData = ref({
     first_name: '',
+    middle_name: '',
     surname: '',
     email: '',
     phone_number: '',
     department: '',
+    role: '',
+    employment_type: '',
     password: '',
     password_confirmation: '',
+    terms: false,
+});
+
+const departmentRoles = {
+    'training': ['Instructor', 'Training Assistant', 'Curriculum Designer', 'LMS Manager'],
+    'development': ['Frontend Developer', 'Backend Developer', 'Full-Stack Developer', 'Mobile App Developer'],
+    'marketing': ['Marketing Manager', 'Social Media Manager', 'Digital Marketer', 'Content Creator', 'Graphics Designer'],
+    'data_analytics': ['Lead Data Analyst', 'Data Analyst', 'Data Engineer', 'Data Scientist', 'AI Engineer', 'AI Developer'],
+    'admin_and_operations': ['Operations Manager', 'Project Manager'],
+    'finance': ['Accountant', 'Finance Assistant'],
+    'sales': ['Sales Executive', 'Sales Support'],
+    'hr': ['HR Officer', 'Recruiter'],
+    'it_support': ['IT Support Technician', 'System Administrator'],
+    'management': ['CEO', 'Manager', 'Team Lead'],
+    'cyber_security': ['Cyber Security Analyst', 'Penetration Tester', 'Security Engineer', 'SOC Analyst'],
+    'business_development': ['Business Development Manager', 'Partnership Manager', 'Client Engagement Officer', 'Growth Strategist']
+};
+
+const availableRoles = computed(() => {
+    return formData.value.department ? departmentRoles[formData.value.department] || [] : [];
+});
+
+watch(() => formData.value.department, () => {
+    formData.value.role = '';
 });
 
 const loading = ref(false);
@@ -93,41 +120,80 @@ const togglePasswordVisibility = () => {
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-3">
+                                                                <label for="middle_name" class="form-label">Middle Name</label>
+                                                                <input class="form-control" v-model="formData.middle_name" type="text" id="middle_name" placeholder="Optional">
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group mb-3">
                                                                 <label for="surname" class="form-label">Surname</label>
                                                                 <input class="form-control" v-model="formData.surname" type="text" id="surname" required="" placeholder="Enter your surname">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-3">
                                                                 <label for="emailaddress" class="form-label">Email address</label>
                                                                 <input class="form-control" v-model="formData.email" type="email" id="emailaddress" required="" placeholder="Enter your email">
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                       
+                                                    </div>
+                                                    <div class="row">
+                                                         <div class="col-md-6">
                                                             <div class="form-group mb-3">
                                                                 <label for="phone_number" class="form-label">Phone Number</label>
                                                                 <input class="form-control" v-model="formData.phone_number" type="tel" id="phone_number" required="" placeholder="Enter your phone number">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-3">
                                                                 <label for="department" class="form-label">Department</label>
                                                                 <select class="form-select" v-model="formData.department" id="department" required="">
                                                                     <option value="" disabled>Select Department</option>
                                                                     <option value="training">Training</option>
-                                                                    <option value="marketing">Marketing</option>
                                                                     <option value="development">Development</option>
-                                                                    <option value="data_analytics">Data Analytics</option>
-                                                                    <option value="admin_and_operations">Admin and Operations</option>
+                                                                    <option value="marketing">Marketing</option>
+                                                                    <option value="data_analytics">Data Analytics / AI</option>
+                                                                    <option value="admin_and_operations">Admin & Operations</option>
+                                                                    <option value="finance">Finance</option>
                                                                     <option value="sales">Sales</option>
+                                                                    <option value="hr">HR</option>
+                                                                    <option value="it_support">IT Support</option>
                                                                     <option value="management">Management</option>
+                                                                    <option value="cyber_security">Cyber Security</option>
+                                                                    <option value="business_development">Business Development</option>
                                                                 </select>
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group mb-3">
+                                                                <label for="role" class="form-label">Role</label>
+                                                                <select class="form-select" v-model="formData.role" id="role" required="" :disabled="!availableRoles.length">
+                                                                    <option value="" disabled>Select Role</option>
+                                                                    <option v-for="role in availableRoles" :key="role" :value="role">{{ role }}</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group mb-3">
+                                                                <label for="employment_type" class="form-label">Employment Type</label>
+                                                                <select class="form-select" v-model="formData.employment_type" id="employment_type" required="">
+                                                                    <option value="" disabled>Select Employment Type</option>
+                                                                    <option value="full_time">Full Time</option>
+                                                                    <option value="part_time">Part Time</option>
+                                                                    <option value="remote">Remote</option>
+                                                                    <option value="hybrid">Hybrid</option>
+                                                                    <option value="contract">Contract</option>
+                                                                    <option value="intern">Intern</option>
+                                                                    <option value="corps_member">Corps Member</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-3">
                                                                 <label for="password" class="form-label">Password</label>
@@ -139,15 +205,21 @@ const togglePasswordVisibility = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group mb-3">
-                                                        <label for="password_confirmation" class="form-label">Confirm Password</label>
-                                                        <div class="input-group">
-                                                            <input class="form-control" v-model="formData.password_confirmation" :type="passwordFieldType" required="" id="password_confirmation" placeholder="Confirm your password">
-                                                            <span class="input-group-text" @click="togglePasswordVisibility" style="cursor: pointer;">
-                                                                <i class="fas" :class="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'"></i>
-                                                            </span>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group mb-3">
+                                                                <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control" v-model="formData.password_confirmation" :type="passwordFieldType" required="" id="password_confirmation" placeholder="Confirm your password">
+                                                                    <span class="input-group-text" @click="togglePasswordVisibility" style="cursor: pointer;">
+                                                                        <i class="fas" :class="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                        <input type="checkbox" class="form-check-input rounded-3 w-2" id="terms" v-model="formData.terms" required>
+                                                        <label class="form-check-label ms-2" for="terms">I accept the <a href="#" class="text-dark">Terms and Conditions</a></label>
                                                     </div>
                         
                                                     

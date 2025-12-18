@@ -69,17 +69,17 @@
                                     </a>
                                 </div>
                                  <div class="swiper-slide">
-                                    <a href="https://checkartisan.com" target="_blank" class="d-block w-100 h-100">
+                                    <a href="https://qikpharma.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/checkartisan.png');">
+                                             style="background-image:url('/images/products/qikPharma.png');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>
                                 </div>
                                  <div class="swiper-slide">
-                                    <a href="https://checkartisan.com" target="_blank" class="d-block w-100 h-100">
+                                    <a href="https://ecracademy.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/checkartisan.png');">
+                                             style="background-image:url('/images/products/ecracademy.png');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>

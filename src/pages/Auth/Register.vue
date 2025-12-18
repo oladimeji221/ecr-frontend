@@ -13,7 +13,7 @@ const formData = ref({
     email: '',
     phone_number: '',
     department: '',
-    role: '',
+    position: '',
     employment_type: '',
     password: '',
     password_confirmation: '',
@@ -40,7 +40,7 @@ const availableRoles = computed(() => {
 });
 
 watch(() => formData.value.department, () => {
-    formData.value.role = '';
+    formData.value.position = '';
 });
 
 const loading = ref(false);
@@ -170,9 +170,9 @@ const togglePasswordVisibility = () => {
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-3">
-                                                                <label for="role" class="form-label">Role</label>
-                                                                <select class="form-select" v-model="formData.role" id="role" required="" :disabled="!availableRoles.length">
-                                                                    <option value="" disabled>Select Role</option>
+                                                                <label for="position" class="form-label">Position</label>
+                                                                <select class="form-select" v-model="formData.position" id="position" required="" :disabled="!availableRoles.length">
+                                                                    <option value="" disabled>Select Position</option>
                                                                     <option v-for="role in availableRoles" :key="role" :value="role">{{ role }}</option>
                                                                 </select>
                                                             </div>

@@ -364,7 +364,7 @@ const handleRegister = async () => {
     try {
         await registerGuest(formPayload);
         success.value = 'Registration successful! Thank you for joining.';
-        setTimeout(() => { router.push('/login'); }, 3000);
+        setTimeout(() => { router.push('/under-construction'); }, 3000);
     } catch (err) {
         if (err.response && err.response.data && err.response.data.errors) {
             error.value = Object.values(err.response.data.errors).flat().join(' ');

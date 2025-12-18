@@ -232,6 +232,12 @@ const routes = [
     name: 'ResetPassword',
     component: ResetPassword,
     meta: { layout: 'AuthLayout' }
+  },
+  {
+    path: '/under-construction',
+    name: 'UnderConstruction',
+    component: () => import('../pages/UnderConstruction.vue'),
+    meta: { layout: 'MainLayout' } // Or another layout if preferred
   }
 ]
 

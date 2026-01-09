@@ -3,8 +3,15 @@ import { useAuth } from '../composables/useAuth'
 import Home from '../pages/Home.vue'
 import Product from '../pages/Product.vue'
 import About from '../pages/About.vue'
+import CompanyOverview from '../pages/About/CompanyOverview.vue'
+import OurTeams from '../pages/About/OurTeams.vue'
+import Partners from '../pages/About/Partners.vue'
+import Careers from '../pages/About/Careers.vue'
 import Education from '../pages/Education.vue'
-import Insights from '../pages/Insights.vue'
+import News from '../pages/Insights/News.vue'
+import CaseStudies from '../pages/Insights/CaseStudies.vue'
+import WhitePapers from '../pages/Insights/WhitePapers.vue'
+import Trends from '../pages/Insights/Trends.vue'
 import SingleInsights from '../pages/SingleInsights.vue'
 import Contact from '../pages/Contact.vue'
 import Appointment from '../pages/Appointment.vue'
@@ -54,6 +61,30 @@ const routes = [
     meta: { layout: 'MainLayout' }
   },
   {
+    path: '/about/company-overview',
+    name: 'CompanyOverview',
+    component: CompanyOverview,
+    meta: { layout: 'MainLayout' }
+  },
+  {
+    path: '/about/our-teams',
+    name: 'OurTeams',
+    component: OurTeams,
+    meta: { layout: 'MainLayout' }
+  },
+  {
+    path: '/about/partners',
+    name: 'Partners',
+    component: Partners,
+    meta: { layout: 'MainLayout' }
+  },
+  {
+    path: '/about/careers',
+    name: 'Careers',
+    component: Careers,
+    meta: { layout: 'MainLayout' }
+  },
+  {
     path: '/services/education-training',
     name: 'EducationTraining',
     component: EducationTraining,
@@ -96,9 +127,27 @@ const routes = [
     meta: { layout: 'MainLayout' }
   },
   {
-    path: '/insights',
-    name: 'Insights',
-    component: Insights,
+    path: '/insights/news',
+    name: 'News',
+    component: News,
+    meta: { layout: 'MainLayout' }
+  },
+  {
+    path: '/insights/case-studies',
+    name: 'CaseStudies',
+    component: CaseStudies,
+    meta: { layout: 'MainLayout' }
+  },
+  {
+    path: '/insights/white-papers',
+    name: 'WhitePapers',
+    component: WhitePapers,
+    meta: { layout: 'MainLayout' }
+  },
+  {
+    path: '/insights/trends',
+    name: 'Trends',
+    component: Trends,
     meta: { layout: 'MainLayout' }
   },
   {

@@ -29,11 +29,11 @@
                         <div class="separator-line h-120px w-2px bg-white position-absolute bottom-0px right-80px sm-right-60px"></div>
                         <div class="fs-70 sm-fs-60 lh-80 fw-600 text-white mb-10px sm-mb-30px alt-font ls-minus-5px sm-ls-minus-2px" data-anime='{ "el": "childs", "translateX": [80, 0], "opacity": [0, 1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <div class="d-inline-block position-relative z-index-9">
-                                <div class="highlight-separator mb-0" data-shadow-animation="true" data-animation-delay="1000">Digital Solutions to Transform your Business</div>
+                                <div class="highlight-separator mb-0" data-shadow-animation="true" data-animation-delay="1000">Digital Solutions That Transform your Business</div>
                             </div>
                         </div>
                         <div class="fs-20 sm-fs-18 text-white mb-20px w-70 xxl-w-100 lg-w-100 sm-w-90 d-block" data-anime='{ "el": "childs", "translateX": [110, 0], "opacity": [0, 1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <span class="d-inline-block opacity-8">ECR Technology services provides innovative solutions to business growth and IT Solutions to solve major problems in your businesses and increase productivity.</span>
+                            <span class="d-inline-block opacity-8">ECR Technology services delivers innovative IT Solutions that drive business growth, solve complex challenges, and increase productivity.</span>
                         </div>
                         <div class="icon-with-text-style-08" data-anime='{ "el": "childs", "translateX": [140, 0], "opacity": [0, 1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <div class="feature-box feature-box-left-icon-middle">
@@ -41,12 +41,12 @@
                                     <i class="fa-solid fa-arrow-right text-base-color icon-small"></i>
                                 </div>
                                 <div class="feature-box-content">
-                                    <router-link to="/appointment" target="blank" class="d-inline-block fs-20 ls-minus-05px alt-font fw-600 text-white text-dark-gray-hover">Book Appointment</router-link>
+                                    <router-link to="/appointment" target="blank" class="d-inline-block fs-20 ls-minus-05px alt-font fw-600 text-white text-dark-gray-hover">Book an Appointment</router-link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 position-relative order-1 order-md-2 d-none d-md-block">
+                    <div class="col-12 col-md-6 position-relative order-1 order-md-2 d-none d-md-block bg-dark-gray">
                         <!-- <div class="position-absolute left-0px bottom-0px bg-white z-index-9 p-65px md-p-40px w-360px d-none d-md-block">
                             <div class="position-absolute right-30px top-30px">
                                 <i class="feather icon-feather-arrow-up-right icon-extra-medium text-dark-gray"></i>
@@ -56,7 +56,7 @@
                                 <h4 class="lh-40 alt-font text-dark-gray fw-600 ls-minus-2px image-mask cover-background mb-0" style="background-image: url('/images/demo-digital-agency-text-img.jpg')">World-class digital media agency.</h4>
                             </div>
                         </div> -->
-                        <div class="swiper h-100 banner-slider sm-h-450px swiper-light-pagination" data-slider-options='{ "slidesPerView": 1, "loop": true, "pagination": { "el": ".swiper-pagination-bullets", "clickable": true }, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "autoplay": { "delay": 4000, "stopOnLastSlide": true, "disableOnInteraction": false },"keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "fade" }'>
+                        <!-- <div class="swiper h-100 banner-slider sm-h-450px swiper-light-pagination" data-slider-options='{ "slidesPerView": 1, "loop": true, "pagination": { "el": ".swiper-pagination-bullets", "clickable": true }, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "autoplay": { "delay": 4000, "stopOnLastSlide": true, "disableOnInteraction": false },"keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "fade" }'>
                             <div class="swiper-wrapper">
 
                              
@@ -87,7 +87,7 @@
                                 
                             </div>
                            
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

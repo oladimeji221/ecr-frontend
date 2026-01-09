@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import api from '../services/api';
-import { getImageUrl } from '../utils/imageHelper';
+import api from '../../services/api';
+import { getImageUrl } from '../../utils/imageHelper';
 
 const route = useRoute();
 const blogs = ref([]);

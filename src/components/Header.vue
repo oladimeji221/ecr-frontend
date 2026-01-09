@@ -71,8 +71,26 @@
                                     </li>
                                   
                                     <li class="nav-item"><a href="https://ecracademy.com" class="nav-link">Education & Training</a></li>
-                                    <li class="nav-item"><router-link to="/insights" class="nav-link">Insights</router-link></li>
-                                    <li class="nav-item"><router-link to="/about" class="nav-link">About</router-link></li>
+                                    <li class="nav-item dropdown dropdown-with-icon-style02">
+                                        <router-link to="/insights/news" class="nav-link">Insights</router-link>
+                                        <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLinkInsights" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkInsights"> 
+                                            <li><router-link to="/insights/news"><i class="fas fa-newspaper me-2"></i>News</router-link></li>
+                                            <li><router-link to="/insights/case-studies"><i class="fas fa-briefcase me-2"></i>Case Studies</router-link></li>
+                                            <li><router-link to="/insights/white-papers"><i class="fas fa-file-alt me-2"></i>White Papers</router-link></li>
+                                            <li><router-link to="/insights/trends"><i class="fas fa-chart-line me-2"></i>Trends</router-link></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown dropdown-with-icon-style02">
+                                        <router-link to="/about" class="nav-link">About</router-link>
+                                        <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLinkAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkAbout"> 
+                                            <li><router-link to="/about/company-overview"><i class="fas fa-building me-2"></i>Company Overview</router-link></li>
+                                            <li><router-link to="/about/our-teams"><i class="fas fa-users me-2"></i>Our Team</router-link></li>
+                                            <li><router-link to="/about/partners"><i class="fas fa-handshake me-2"></i>Partners</router-link></li>
+                                            <li><router-link to="/about/careers"><i class="fas fa-briefcase me-2"></i>Careers</router-link></li>
+                                        </ul>
+                                    </li>
 
                                     <!-- Combined Dropdown for All Users -->
                                     <li class="nav-item dropdown dropdown-with-icon-style02">

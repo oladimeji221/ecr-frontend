@@ -15,7 +15,7 @@
                                         <div class="mb-0 border-0 p-md-5 p-lg-0 p-4">
                                             <div class="mb-4 p-0 text-center">
                                                 <a class='auth-logo' href=''>
-                                                    <img src="/images/logo.png" alt="logo-dark" class="mx-auto" height="28" />
+                                                    <img src="/images/logo.webp" alt="logo-dark" class="mx-auto" height="28" />
                                                 </a>
                                             </div>
 
@@ -62,7 +62,7 @@
                         <div class="account-page-bg p-md-5 p-4">
                             <div class="text-center">
                                 <div class="auth-image">
-                                    <img src="/images/staff.jpg" class="mx-auto img-fluid"  alt="images">
+                                    <img src="/images/staff.webp" class="mx-auto img-fluid"  alt="images">
                                 </div>
                             </div>
                         </div>

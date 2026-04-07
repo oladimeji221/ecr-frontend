@@ -48,7 +48,7 @@
           <div class="row justify-content-center pt-55px pb-55px sm-pt-40px sm-pb-40px">
               <!-- start footer column -->
               <div class="col-lg-3 col-md-12 col-sm-6 last-paragraph-no-margin text-center text-sm-start text-md-center text-lg-start md-mb-30px">
-                  <router-link to="/" class="footer-logo d-inline-block"><img :src="'/images/logo.png'" :data-at2x="'/images/logo.png'" alt=""></router-link>
+                  <router-link to="/" class="footer-logo d-inline-block"><img :src="'/images/logo.webp'" :data-at2x="'/images/logo.webp'" alt=""></router-link>
               </div>
               <!-- end footer column -->
               <!-- start footer column -->

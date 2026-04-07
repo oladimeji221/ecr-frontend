@@ -99,6 +99,14 @@
 <script setup>
 import { ref } from 'vue';
 import api from '../services/api';
+import { useSeo, localBusinessSchema } from '@/composables/useSeo';
+
+useSeo({
+  title: 'Book an Appointment',
+  description: 'Schedule a consultation with ECR Technology Services. Book an appointment online to discuss your IT, digital transformation, training, or software development needs.',
+  url: 'https://www.ecr-ts.com/appointment',
+  schema: localBusinessSchema
+});
 
 const formData = ref({
     name: '',

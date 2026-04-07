@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, watch, onBeforeUnmount } from 'vue';
+import { computed, onMounted, watch, onBeforeUnmount, nextTick } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import MainLayout from './layouts/MainLayout.vue';
 import AuthLayout from './layouts/AuthLayout.vue';
@@ -102,15 +102,48 @@ const handleAssetLoading = (path) => {
     }
 };
 
+// Force any data-anime elements that are still invisible to become visible
+const forceAnimeVisible = () => {
+  document.querySelectorAll('[data-anime]').forEach((el) => {
+    const makeVisible = (node) => {
+      if (getComputedStyle(node).opacity === '0') {
+        node.style.opacity = '1';
+        node.style.transform = 'none';
+        node.style.filter = 'none';
+      }
+    };
+    makeVisible(el);
+    el.querySelectorAll('*').forEach(makeVisible);
+  });
+};
+
+// Re-trigger the template's animation library after Vue renders new route content.
+// main.js is a deferred script — it runs AFTER Vue mounts and sets data-anime
+// elements to opacity:0. We dispatch scroll events at increasing intervals to
+// wake IntersectionObservers, then force-show anything still invisible at 2s.
+const triggerAnimationReinit = () => {
+  nextTick(() => {
+    // Give main.js time to load and set up observers, then trigger scroll
+    [200, 500, 900].forEach((ms) => setTimeout(() => {
+      window.dispatchEvent(new Event('scroll'));
+    }, ms));
+
+    // Hard fallback — if anything is still invisible after 2s, force it visible
+    setTimeout(forceAnimeVisible, 2000);
+  });
+};
+
 onMounted(() => {
   getUser();
   handleAssetLoading(route.path);
   setupInactivityListeners();
   resetInactivityTimer();
+  triggerAnimationReinit();
 });
 
 watch(() => route.path, (newPath) => {
-    handleAssetLoading(newPath);
+  handleAssetLoading(newPath);
+  triggerAnimationReinit();
 });
 
 onBeforeUnmount(() => {

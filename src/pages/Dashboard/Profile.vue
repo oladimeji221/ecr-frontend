@@ -157,7 +157,7 @@ const togglePasswordVisibility = () => {
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <!-- <img src="/images/slider_1.jpg" class="rounded-top-2 img-fluid overflow-hidden" alt="image data" height="30px"> -->
+                                    <!-- <img src="/images/slider_1.webp" class="rounded-top-2 img-fluid overflow-hidden" alt="image data" height="30px"> -->
 
                                     <div class="card-body">
                                         <div class="align-items-center">

@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
 import api, { getClientIp } from '../services/api';
 import { useAuth } from '../composables/useAuth';
 import { getImageUrl } from '../utils/imageHelper';
+import { useSeo } from '@/composables/useSeo';
 
 const route = useRoute();
 const blog = ref(null);
@@ -64,13 +65,15 @@ const commentStatus = ref({
 });
 
 const formatDate = (dateString) => {
-    if (!dateString) return 'Invalid Date';
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return 'Invalid Date';
-    return date.toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+    if (!dateString) return '';
+    // Laravel returns "2024-01-15 10:30:00" (space) — replace with T for cross-browser parsing
+    const normalized = String(dateString).replace(' ', 'T');
+    const date = new Date(normalized);
+    if (isNaN(date.getTime())) return '';
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
     });
 };
 
@@ -248,6 +251,30 @@ watch(() => route.params.slug, async (newSlug) => {
     }
 }, { immediate: true });
 
+watch(blog, (newBlog) => {
+    if (!newBlog) return;
+    const pageUrl = `https://www.ecr-ts.com/insights/${newBlog.slug}`;
+    useSeo({
+        title: newBlog.title,
+        description: newBlog.excerpt || newBlog.title,
+        url: pageUrl,
+        image: newBlog.image || undefined,
+        type: 'article',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: newBlog.title,
+            description: newBlog.excerpt || newBlog.title,
+            url: pageUrl,
+            datePublished: newBlog.created_at || newBlog.createdAt,
+            dateModified: newBlog.updated_at || newBlog.created_at || newBlog.createdAt,
+            image: newBlog.image ? [newBlog.image] : undefined,
+            author: newBlog.user ? { '@type': 'Person', name: newBlog.user.name } : { '@type': 'Organization', name: 'ECR Technology Services' },
+            publisher: { '@type': 'Organization', name: 'ECR Technology Services', url: 'https://www.ecr-ts.com', logo: { '@type': 'ImageObject', url: 'https://www.ecr-ts.com/images/ECR_LOGO.png' } }
+        }
+    });
+});
+
 onMounted(async () => {
     await getUser();
     await ensureGuestIp();
@@ -282,10 +309,10 @@ onUnmounted(() => {
                 <div class="row justify-content-center">
                     <div class="col-lg-10 overlap-section text-center">
                         <div class="p-10 box-shadow-extra-large border-radius-4px bg-white text-center">
-                            <a v-if="blog.category" href="#" class="bg-solitude-blue text-uppercase fs-13 ps-25px pe-25px alt-font fw-500 text-dark-gray lh-40 sm-lh-55 border-radius-100px d-inline-block mb-3 sm-mb-15px">{{ blog.category.name }}</a>
+                            <a v-if="blog.category" href="#" class="bg-solitude-blue text-uppercase fs-13 ps-25px pe-25px alt-font fw-500 text-dark-gray lh-40 sm-lh-55 border-radius-100px d-inline-block mb-3 sm-mb-15px">{{ blog.category?.name }}</a>
                             <h3 class="alt-font text-dark-gray fw-600 ls-minus-1px mb-15px">{{ blog.title }}</h3>
                             <div v-if="blog.user" class="lg-20px sm-mb-0">
-                                <span>By <a href="#" class="text-dark-gray">{{ blog.user.name }}</a></span> on <a href="#" class="text-dark-gray">{{ formatDate(blog.createdAt) }}</a>
+                                <span>By <a href="#" class="text-dark-gray">{{ blog.user?.name }}</a></span> on <a href="#" class="text-dark-gray">{{ formatDate(blog.createdAt) }}</a>
                             </div>
                         </div>
                     </div>
@@ -371,11 +398,11 @@ onUnmounted(() => {
                             <li v-for="relatedBlog in blog.related_blogs" :key="relatedBlog.id" class="grid-item">
                                 <div class="card bg-transparent border-0 h-100">
                                     <div class="blog-image position-relative overflow-hidden border-radius-4px">
-                                        <router-link :to="`/insights/${relatedBlog.slug}`"><img :src="getImageUrl(relatedBlog.image)" alt="" /></router-link>
+                                        <router-link :to="`/insights/${relatedBlog.slug || relatedBlog.id}`"><img :src="getImageUrl(relatedBlog.image)" alt="" /></router-link>
                                     </div>
                                     <div class="card-body px-0 pb-30px pt-30px xs-pb-15px last-paragraph-no-margin">
-                                        <span class="fs-13 text-uppercase mb-5px d-block"><a href="#" class="text-dark-gray fw-500 categories-text">{{ relatedBlog.category.name }}</a><a href="#" class="blog-date">{{ formatDate(relatedBlog.createdAt || relatedBlog.created_at) }}</a></span>
-                                        <router-link :to="`/insights/${relatedBlog.slug}`" class="card-title mb-0 fw-500 fs-18 lh-30 text-dark-gray d-inline-block">{{ relatedBlog.title }}</router-link>
+                                        <span class="fs-13 text-uppercase mb-5px d-block"><a href="#" class="text-dark-gray fw-500 categories-text">{{ relatedBlog.category?.name }}</a><a href="#" class="blog-date">{{ formatDate(relatedBlog.createdAt || relatedBlog.created_at) }}</a></span>
+                                        <router-link :to="`/insights/${relatedBlog.slug || relatedBlog.id}`" class="card-title mb-0 fw-500 fs-18 lh-30 text-dark-gray d-inline-block">{{ relatedBlog.title }}</router-link>
                                     </div>
                                 </div>
                             </li>
@@ -464,7 +491,7 @@ onUnmounted(() => {
         <div class="row g-0 position-relative">
             <div class="col-lg-12">
                 <div class="p-14 xl-p-11 bg-white">
-                    <span class="mb-5px d-block text-dark-gray">Read more about {{ blog.category.name }}?</span>
+                    <span class="mb-5px d-block text-dark-gray">Read more about {{ blog.category?.name }}?</span>
                     <h3 class="d-inline-block alt-font fw-600 text-dark-gray mb-8 ls-minus-1px">Don't miss out. Get notified whenever a related post goes live.</h3>
                     <form @submit.prevent="subscribeCategory">
                         <div class="position-relative form-group mb-15px">

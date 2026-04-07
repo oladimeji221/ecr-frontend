@@ -19,11 +19,11 @@
                 <div class="row align-items-center justify-content-center" data-anime='{ "perspective": [1200,1200] }'>
                     <div class="col-lg-6 md-mb-50px" data-anime='{ "translateY": [0, 0], "zoom": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
                         <figure class="position-relative m-0">
-                            <img src="/images/cyber1.jpg" alt="Cyber Security" class="w-100 border-radius-5px">
+                            <img src="/images/cyber1.webp" alt="Cyber Security" class="w-100 border-radius-5px">
                         </figure>
                     </div>
                     <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-md-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-flex justify-content-center justify-content-md-start"><i class="bi bi-shield-check fs-16 me-5px"></i>Cyber Security</span>
+                        <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-12 lh-40 fw-700 border-radius-100px bg-dark-gray d-inline-flex justify-content-center justify-content-md-start"><i class="bi bi-shield-check fs-16 me-5px"></i>Cyber Security</span>
                         <h3 class="text-dark-gray fw-700 ls-minus-1px">Comprehensive security solutions.</h3>
                         <p class="w-95 md-w-100">We provide robust cybersecurity solutions to protect your business from modern threats. Our expert team is dedicated to safeguarding your digital infrastructure.</p>
                         
@@ -111,19 +111,19 @@
                 <div class="row align-items-center mt-8 sm-mt-40px" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <div class="col-12">
                         <div class="bg-very-light-gray p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
-                            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1"><img src="/images/faq_icon.png" alt=""></div>
+                            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1"><img src="/images/faq_icon.webp" alt=""></div>
                             <h3 class="fw-700 text-dark-gray ls-minus-1px">Frequently asked questions.</h3> 
-                            <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="fa-solid fa-minus" data-inactive-icon="fa-solid fa-plus">
+                            <div class="accordion accordion-style-02">
                                 <!-- start accordion item -->
-                                <div class="accordion-item active-accordion">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 1 }">
                                     <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01" aria-expanded="true" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 1 ? null : 1">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="fa-solid fa-minus fs-20"></i><span class="fs-17 fw-500">Why is cybersecurity important for my business?</span>
+                                                <i class="fs-20" :class="activeAccordion === 1 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">Why is cybersecurity important for my business?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 1 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
                                             <p class="w-90 sm-w-95 xs-w-100">Cybersecurity protects your sensitive data, customer information, and business reputation from cyber threats, ensuring business continuity and trust.</p>
                                         </div>
@@ -131,15 +131,15 @@
                                 </div>
                                 <!-- end accordion item -->
                                 <!-- start accordion item -->
-                                <div class="accordion-item">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 2 }">
                                     <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02" aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 2 ? null : 2">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="fa-solid fa-plus fs-20"></i><span class="fs-17 fw-500">What are common cyber threats?</span>
+                                                <i class="fs-20" :class="activeAccordion === 2 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">What are common cyber threats?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-02" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 2 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
                                             <p class="w-90 sm-w-95 xs-w-100">Common threats include malware, phishing, ransomware, denial-of-service (DoS) attacks, and data breaches. Our solutions protect against these and more.</p>
                                         </div>
@@ -147,15 +147,15 @@
                                 </div>
                                 <!-- end accordion item -->
                                 <!-- start accordion item -->
-                                <div class="accordion-item">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 3 }">
                                     <div class="accordion-header border-bottom border-color-transparent">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03" aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 3 ? null : 3">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="feather icon-feather-plus fs-20"></i><span class="fs-17 fw-500">How can ECR help secure my business?</span>
+                                                <i class="fs-20" :class="activeAccordion === 3 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">How can ECR help secure my business?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-03" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 3 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
                                             <p class="w-90 sm-w-95 xs-w-100">We offer a multi-layered approach, including risk assessments, network security, endpoint protection, and employee training to create a comprehensive security posture.</p>
                                         </div>
@@ -184,6 +184,16 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+const activeAccordion = ref(1);
+
+import { useSeo } from '@/composables/useSeo';
+useSeo({
+  title: 'Cyber Security Solution - Protect Your Business',
+  description: 'ECR Technology Services provides comprehensive cyber security solutions including network security, endpoint protection, security audits, compliance, incident response, and security awareness training.',
+  url: 'https://www.ecr-ts.com/services/cyber-security-solution',
+  schema: { '@context': 'https://schema.org', '@type': 'Service', name: 'Cyber Security Solution', provider: { '@type': 'Organization', name: 'ECR Technology Services', url: 'https://www.ecr-ts.com' }, description: 'Comprehensive cyber security solutions to safeguard your business.', url: 'https://www.ecr-ts.com/services/cyber-security-solution' }
+});
 </script>
 
 <style scoped>

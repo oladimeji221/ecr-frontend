@@ -54,7 +54,7 @@ const togglePasswordVisibility = () => {
                 <div class="card mb-4 mt-5 mx-4 mx-sm-0 position-relative" style="max-width: 500px;">
                     <!-- Logo -->
                     <div class="wd-100 bg-white p-3 rounded-circle shadow-lg position-absolute translate-middle top-0 start-50">
-                        <img src="/images/logo.png" alt="" class="img-fluid">
+                        <img src="/images/logo.webp" alt="" class="img-fluid">
                     </div>
                     
                     <div class="card-body p-sm-5">

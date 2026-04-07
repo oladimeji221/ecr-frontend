@@ -1,4 +1,20 @@
-<script setup></script>
+<script setup>
+import { useSeo, orgSchema } from '@/composables/useSeo';
+
+useSeo({
+  title: 'About Us - Our Mission, Vision & Values',
+  description: 'Learn about ECR Technology Services — an ICT company incorporated in Nigeria in 2012, committed to aligning business strategies with the right IT solutions. Delivery and Trust are our core values.',
+  url: 'https://www.ecr-ts.com/about',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About ECR Technology Services',
+    url: 'https://www.ecr-ts.com/about',
+    description: 'ECR Technology Services is a dynamic ICT company helping clients align their business strategies with the appropriate IT strategies to achieve measurable outcomes.',
+    publisher: orgSchema,
+  }
+});
+</script>
 <template>
  <!-- start page title -->
         <section class="page-title-separate-breadcrumbs bg-base-color bg-sliding-line-dark-gray  ipad-top-space-margin">
@@ -21,7 +37,7 @@
                 <div class="row mb-3 align-items-center">
                     <div class="col-lg-6 md-mb-50px sm-mb-30px">
                         <figure class="position-relative mb-0 overflow-hidden"> 
-                            <img src="/images/tech.jpg" class="w-100" alt=""> 
+                            <img src="/images/tech.webp" class="w-100" alt=""> 
                             <!-- <figcaption class="position-absolute text-center left-0px bottom-0px pt-35px pb-35px ps-15px pe-15px bg-white">
                                 <span class="fs-90 lh-85 text-dark-gray ls-minus-2px position-relative fw-700 mb-5px d-block alt-font">28<sub class="fs-40 lh-40 text-dark-gray position-relative top-minus-40px">+</sub></span>
                                 <span class="d-block mx-auto fs-14 fw-600 lh-20 w-200px text-center text-dark-gray text-uppercase">Years working experience</span>

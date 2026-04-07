@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { useSeo, orgSchema } from '@/composables/useSeo';
+useSeo({
+  title: 'Company Overview - Who We Are',
+  description: 'ECR Technology Services is a dynamic ICT company incorporated in Nigeria in 2012. We align business strategies with the right IT solutions across many continents, guided by our values of Delivery and Trust.',
+  url: 'https://www.ecr-ts.com/about/company-overview',
+  schema: { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Company Overview', url: 'https://www.ecr-ts.com/about/company-overview', publisher: orgSchema }
+});
+</script>
 <template>
  <!-- start page title -->
         <section class="page-title-separate-breadcrumbs bg-base-color bg-sliding-line-dark-gray  ipad-top-space-margin">
@@ -21,7 +29,7 @@
                 <div class="row mb-3 align-items-center">
                     <div class="col-lg-6 md-mb-50px sm-mb-30px">
                         <figure class="position-relative mb-0 overflow-hidden"> 
-                            <img src="/images/tech.jpg" class="w-100" alt=""> 
+                            <img src="/images/tech.webp" class="w-100" alt=""> 
                             <!-- <figcaption class="position-absolute text-center left-0px bottom-0px pt-35px pb-35px ps-15px pe-15px bg-white">
                                 <span class="fs-90 lh-85 text-dark-gray ls-minus-2px position-relative fw-700 mb-5px d-block alt-font">28<sub class="fs-40 lh-40 text-dark-gray position-relative top-minus-40px">+</sub></span>
                                 <span class="d-block mx-auto fs-14 fw-600 lh-20 w-200px text-center text-dark-gray text-uppercase">Years working experience</span>

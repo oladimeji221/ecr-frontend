@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '../../services/api';
 import { getImageUrl } from '../../utils/imageHelper';
@@ -44,15 +44,7 @@ watch(() => route.query.search, (newSearch) => {
     }
 }, { immediate: true });
 
-onMounted(() => {
-    const search = route.query.search;
-    if (search) {
-        searchQuery.value = search;
-        fetchBlogs(search);
-    } else {
-        fetchBlogs();
-    }
-});
+// Initial fetch is handled by watch({ immediate: true }) above
 </script>
 <template>
     <!-- start page title -->
@@ -91,7 +83,7 @@ onMounted(() => {
                                 <p class="text-light">No blogs found.</p>
                             </li>
                             <li v-for="blog in blogs" :key="blog.id" class="grid-item text-white">
-                                <router-link :to="`/insights/${blog.slug}`">
+                                <router-link :to="`/insights/${blog.slug || blog.id}`">
                                     <figure class="position-relative mb-0 overflow-hidden">
                                         <div class="blog-image bg-dark-slate-blue">
                                             <img :src="getImageUrl(blog.image)" alt="" />
@@ -99,7 +91,7 @@ onMounted(() => {
                                         </div>
                                         <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-25px">
                                             <div class="blog-categories mb-auto">
-                                                <span class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">{{ blog.category.name }}</span>
+                                                <span class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">{{ blog.category?.name }}</span>
                                             </div> 
                                             <span class="text-white card-title fs-22 fw-500">{{ blog.title }}</span>
                                         </figcaption>

@@ -8,8 +8,8 @@
             <div class="m-header">
                 <a href="" class="b-brand">
         
-                    <img src="/images/logo.png" alt="" class="logo logo-lg" />
-                    <img src="/images/logo.png" alt="" class="logo logo-sm" />
+                    <img src="/images/logo.webp" alt="" class="logo logo-lg" />
+                    <img src="/images/logo.webp" alt="" class="logo logo-sm" />
                 </a>
             </div>
             <div class="navbar-content">

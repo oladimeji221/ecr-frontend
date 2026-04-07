@@ -19,11 +19,11 @@
                 <div class="row align-items-center justify-content-center" data-anime='{ "perspective": [1200,1200] }'>
                     <div class="col-lg-6 md-mb-50px" data-anime='{ "translateY": [0, 0], "zoom": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
                         <figure class="position-relative m-0">
-                            <img src="/images/data_analysis1.jpg" alt="Data Analytics" class="w-100 border-radius-5px">
+                            <img src="/images/data_analysis1.webp" alt="Data Analytics" class="w-100 border-radius-5px">
                         </figure>
                     </div>
                     <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-md-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-flex justify-content-center justify-content-md-start"><i class="bi bi-bar-chart fs-16 me-5px"></i>Data-driven Decisions</span>
+                        <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-12 lh-40 fw-700 border-radius-100px bg-dark-gray d-inline-flex justify-content-center justify-content-md-start"><i class="bi bi-bar-chart fs-16 me-5px"></i>Data-driven Decisions</span>
                         <h3 class="text-dark-gray fw-700 ls-minus-1px">Transforming data into actionable insights.</h3>
                         <p class="w-95 md-w-100">Our data analytics services help you make sense of your data, uncover trends, and make informed decisions that drive business growth.</p>
                      
@@ -111,19 +111,19 @@
                 <div class="row align-items-center mt-8 sm-mt-40px" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <div class="col-12">
                         <div class="bg-very-light-gray p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
-                            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1"><img src="/images/faq_icon.png" alt=""></div>
+                            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1"><img src="/images/faq_icon.webp" alt=""></div>
                             <h3 class="fw-700 text-dark-gray ls-minus-1px">Frequently asked questions.</h3> 
-                            <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="fa-solid fa-minus" data-inactive-icon="fa-solid fa-plus">
+                            <div class="accordion accordion-style-02">
                                 <!-- start accordion item -->
-                                <div class="accordion-item active-accordion">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 1 }">
                                     <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01" aria-expanded="true" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 1 ? null : 1">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="fa-solid fa-minus fs-20"></i><span class="fs-17 fw-500">What is data analytics?</span>
+                                                <i class="fs-20" :class="activeAccordion === 1 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">What is data analytics?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 1 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
                                             <p class="w-90 sm-w-95 xs-w-100">Data analytics is the process of examining data sets in order to draw conclusions about the information they contain, increasingly with the aid of specialized systems and software.</p>
                                         </div>
@@ -131,15 +131,15 @@
                                 </div>
                                 <!-- end accordion item -->
                                 <!-- start accordion item -->
-                                <div class="accordion-item">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 2 }">
                                     <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02" aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 2 ? null : 2">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="fa-solid fa-plus fs-20"></i><span class="fs-17 fw-500">How can data analytics help my business?</span>
+                                                <i class="fs-20" :class="activeAccordion === 2 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">How can data analytics help my business?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-02" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 2 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
                                             <p class="w-90 sm-w-95 xs-w-100">Data analytics can help you optimize processes, identify new revenue opportunities, improve customer experience, and make more informed business decisions.</p>
                                         </div>
@@ -147,15 +147,15 @@
                                 </div>
                                 <!-- end accordion item -->
                                 <!-- start accordion item -->
-                                <div class="accordion-item">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 3 }">
                                     <div class="accordion-header border-bottom border-color-transparent">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03" aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 3 ? null : 3">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="fa-solid fa-plus fs-20"></i><span class="fs-17 fw-500">What tools do you use for data analytics?</span>
+                                                <i class="fs-20" :class="activeAccordion === 3 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">What tools do you use for data analytics?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-03" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 3 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
                                             <p class="w-90 sm-w-95 xs-w-100">We use a variety of industry-leading tools and technologies, including Python, R, SQL, Tableau, and Power BI, to provide the best results for our clients.</p>
                                         </div>
@@ -184,6 +184,16 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+const activeAccordion = ref(1);
+
+import { useSeo } from '@/composables/useSeo';
+useSeo({
+  title: 'Data Analytics - Insights & Business Intelligence',
+  description: 'Transform your raw data into actionable insights with ECR Technology Services. We offer data analytics training, business intelligence, data visualization, predictive modeling, and reporting solutions.',
+  url: 'https://www.ecr-ts.com/services/data-analytics',
+  schema: { '@context': 'https://schema.org', '@type': 'Service', name: 'Data Analytics', provider: { '@type': 'Organization', name: 'ECR Technology Services', url: 'https://www.ecr-ts.com' }, description: 'Data analytics and business intelligence solutions for smarter decision-making.', url: 'https://www.ecr-ts.com/services/data-analytics' }
+});
 </script>
 
 <style scoped>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://betafeet.store/public/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://api.ecr-ts.com/api',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

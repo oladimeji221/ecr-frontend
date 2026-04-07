@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="col-auto">
           <router-link class="navbar-brand" to="/">
-            <img src="/images/logo.png"
-                 data-at2x="/images/logo.png" alt="" class="default-logo">
-            <img src="/images/logo.png"
-                 data-at2x="/images/logo.png" alt="" class="alt-logo">
-            <img src="/images/logo.png"
-                 data-at2x="/images/logo.png" alt="" class="mobile-logo">
+            <img src="/images/logo.webp"
+                 data-at2x="/images/logo.webp" alt="" class="default-logo">
+            <img src="/images/logo.webp"
+                 data-at2x="/images/logo.webp" alt="" class="alt-logo">
+            <img src="/images/logo.webp"
+                 data-at2x="/images/logo.webp" alt="" class="mobile-logo">
           </router-link>
         </div> 
         <div class="col-auto col-xl-6 col-lg-8 menu-order position-static">

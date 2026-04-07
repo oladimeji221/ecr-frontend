@@ -118,6 +118,14 @@
 <script setup>
 import { ref } from 'vue';
 import api from '../services/api';
+import { useSeo, localBusinessSchema } from '@/composables/useSeo';
+
+useSeo({
+  title: 'Contact Us - Get In Touch',
+  description: 'Contact ECR Technology Services. Reach us at our Umuahia, Nigeria office or by phone/email. We are here to help you with your IT and digital transformation needs.',
+  url: 'https://www.ecr-ts.com/contact',
+  schema: localBusinessSchema
+});
 
 const formData = ref({
     name: '',

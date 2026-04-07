@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-md-8 sm-mb-30px" data-bottom-top="transform: translate3d(0, -30px, 0px);" data-top-bottom="transform: translate3d(0, 30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "lr", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/products/ecr_academy_1.png" alt="" >
+                            <img src="/images/products/ecr_academy_1.webp" alt="" >
                         </div>
                     </div>
                     <div class="col-md-4" data-bottom-top="transform: translate3d(0, 30px, 0px);" data-top-bottom="transform: translate3d(0, -30px, 0px);">
@@ -109,12 +109,12 @@
                 <div class="row">
                     <div class="col-md-4 sm-mb-30px" data-bottom-top="transform: translate3d(0, 30px, 0px);" data-top-bottom="transform: translate3d(0, -30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "rl", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/demo-branding-agency-services-04.jpg" alt="" >
+                            <img src="/images/demo-branding-agency-services-04.webp" alt="" >
                         </div>
                     </div>
                     <div class="col-md-8" data-bottom-top="transform: translate3d(0, -30px, 0px);" data-top-bottom="transform: translate3d(0, 30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "lr", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/software_dev.jpg" alt="" >
+                            <img src="/images/software_dev.webp" alt="" >
                         </div>
                     </div>
                 </div>
@@ -153,12 +153,12 @@
                 <div class="row">
                     <div class="col-md-8 sm-mb-30px" data-bottom-top="transform: translate3d(0, -30px, 0px);" data-top-bottom="transform: translate3d(0, 30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "lr", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/data_analysis1.jpg" alt="" >
+                            <img src="/images/data_analysis1.webp" alt="" >
                         </div>
                     </div>
                     <div class="col-md-4" data-bottom-top="transform: translate3d(0, 30px, 0px);" data-top-bottom="transform: translate3d(0, -30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "rl", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/data_analysis2.jpg" alt="" >
+                            <img src="/images/data_analysis2.webp" alt="" >
                         </div>
                     </div>
                 </div>
@@ -197,12 +197,12 @@
                 <div class="row">
                     <div class="col-md-8 sm-mb-30px" data-bottom-top="transform: translate3d(0, -30px, 0px);" data-top-bottom="transform: translate3d(0, 30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "lr", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/it_strategy1.jpg" alt="" >
+                            <img src="/images/it_strategy1.webp" alt="" >
                         </div>
                     </div>
                     <div class="col-md-4" data-bottom-top="transform: translate3d(0, 30px, 0px);" data-top-bottom="transform: translate3d(0, -30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "rl", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/it_strategy2.jpg" alt="" >
+                            <img src="/images/it_strategy2.webp" alt="" >
                         </div>
                     </div>
                 </div>
@@ -241,12 +241,12 @@
                 <div class="row">
                     <div class="col-md-4 sm-mb-30px" data-bottom-top="transform: translate3d(0, 30px, 0px);" data-top-bottom="transform: translate3d(0, -30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "rl", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/graphic2.jpeg" alt="" >
+                            <img src="/images/graphic2.webp" alt="" >
                         </div>
                     </div>
                     <div class="col-md-8" data-bottom-top="transform: translate3d(0, -30px, 0px);" data-top-bottom="transform: translate3d(0, 30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "lr", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/graphic1.jpg" alt="" >
+                            <img src="/images/graphic1.webp" alt="" >
                         </div>
                     </div>
                 </div>
@@ -285,12 +285,12 @@
                 <div class="row">
                     <div class="col-md-8 sm-mb-30px" data-bottom-top="transform: translate3d(0, -30px, 0px);" data-top-bottom="transform: translate3d(0, 30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "lr", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/cyber1.jpg" alt="" >
+                            <img src="/images/cyber1.webp" alt="" >
                         </div>
                     </div>
                     <div class="col-md-4" data-bottom-top="transform: translate3d(0, 30px, 0px);" data-top-bottom="transform: translate3d(0, -30px, 0px);">
                         <div class="position-relative" data-anime='{ "effect": "slide", "direction": "rl", "color": "#f7f7f7", "duration": 1000, "delay": 0 }'>
-                            <img src="/images/cyber2.jpg" alt="" >
+                            <img src="/images/cyber2.webp" alt="" >
                         </div>
                     </div>
                 </div>
@@ -299,6 +299,27 @@
         <!-- end section -->
 </template>
 <script setup>
+import { useSeo } from '@/composables/useSeo';
+
+useSeo({
+  title: 'Our Services - IT & Digital Solutions',
+  description: 'Explore ECR Technology Services\' full range of services: ECR Academy (education & training), software development, data analytics, IT strategy & consulting, graphics designing, and cyber security solutions.',
+  url: 'https://www.ecr-ts.com/services',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'ECR Technology Services - Services',
+    url: 'https://www.ecr-ts.com/services',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ECR Academy - Education & Training', url: 'https://www.ecr-ts.com/services/education-training' },
+      { '@type': 'ListItem', position: 2, name: 'Software Development', url: 'https://www.ecr-ts.com/services/software-development' },
+      { '@type': 'ListItem', position: 3, name: 'Data Analytics', url: 'https://www.ecr-ts.com/services/data-analytics' },
+      { '@type': 'ListItem', position: 4, name: 'IT Strategy & Consulting', url: 'https://www.ecr-ts.com/services/it-strategy-consulting' },
+      { '@type': 'ListItem', position: 5, name: 'Graphics Designing', url: 'https://www.ecr-ts.com/services/graphics-designing' },
+      { '@type': 'ListItem', position: 6, name: 'Cyber Security Solution', url: 'https://www.ecr-ts.com/services/cyber-security-solution' },
+    ]
+  }
+});
 </script>
 <scope scoped>
 

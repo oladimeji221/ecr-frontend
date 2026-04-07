@@ -9,7 +9,7 @@
                 <div class="col-lg-6 icon-with-text-style-01 pt-40px pb-40px pe-8 lg-pe-15px xs-pb-30px border-end md-border-end-0 md-border-bottom border-color-extra-medium-gray" data-anime='{ "el": "childs", "translateX": [-30, 1], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue":200, "easing": "easeOutQuad" }'>
                     <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
                         <div class="feature-box-icon me-25px">
-                            <img :src="'/images/logo.png'" class="h-65px" alt="">
+                            <img :src="'/images/logo.webp'" class="h-65px" alt="">
                         </div>
                         <div class="feature-box-content">
                             <h6 class="text-dark-gray fw-400 mb-0 alt-font ls-minus-05px">Premier ICT Partner for <span class="text-decoration-line-bottom-medium">Digital Transformation</span></h6>
@@ -124,39 +124,55 @@
            <div class="container">
                 <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-2 clients-style-06 justify-content-center d-none d-sm-flex" data-anime='{ "el": "childs", "translateY": [-15, 0], "scale": [1.1, 1], "opacity": [0,1], "duration": 500, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <div class="col client-box text-center md-mb-40px">
-                        <a href=""><img :src="'/images/partners/auraportal_lixltc.png'" class="h-70px" alt=""></a>
+                        <a href=""><img :src="'/images/partners/auraportal_lixltc.webp'" class="h-70px" alt=""></a>
                     </div>
                     <div class="col client-box text-center md-mb-40px">
-                        <a href=""><img :src="'/images/partners/BCabs-logo_nndavy.png'" class="h-70px" alt=""></a>
+                        <a href=""><img :src="'/images/partners/BCabs-logo_nndavy.webp'" class="h-70px" alt=""></a>
                     </div>
                     <div class="col client-box text-center md-mb-40px">
-                        <a href=""><img :src="'/images/partners/lms365_kq89rs.png'" class="h-70px" alt=""></a>
+                        <a href=""><img :src="'/images/partners/lms365_kq89rs.webp'" class="h-70px" alt=""></a>
                     </div>
                     <div class="col client-box text-center sm-mb-40px">
-                        <a href=""><img :src="'/images/partners/microsoft_yvhhkh.png'" class="h-70px" alt=""></a>
+                        <a href=""><img :src="'/images/partners/microsoft_yvhhkh.webp'" class="h-70px" alt=""></a>
                     </div>
                     <div class="col client-box text-center">
-                        <a href=""><img :src="'/images/partners/sharepoint_cqv5pe.png'" class="h-70px" alt=""></a>
+                        <a href=""><img :src="'/images/partners/sharepoint_cqv5pe.webp'" class="h-70px" alt=""></a>
                     </div>
                     </div>
                 <div class="swiper clients-logo-swiper d-block d-sm-none">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide client-box text-center">
-                            <a href=""><img :src="'/images/partners/auraportal_lixltc.png'" class="h-70px" alt=""></a>
+                            <a href=""><img :src="'/images/partners/auraportal_lixltc.webp'" class="h-70px" alt=""></a>
                         </div>
                         <div class="swiper-slide client-box text-center">
-                            <a href=""><img :src="'/images/partners/BCabs-logo_nndavy.png'" class="h-70px" alt=""></a>
+                            <a href=""><img :src="'/images/partners/BCabs-logo_nndavy.webp'" class="h-70px" alt=""></a>
                         </div>
                         <div class="swiper-slide client-box text-center">
-                            <a href=""><img :src="'/images/partners/lms365_kq89rs.png'" class="h-70px" alt=""></a>
+                            <a href=""><img :src="'/images/partners/lms365_kq89rs.webp'" class="h-70px" alt=""></a>
                         </div>
                         <div class="swiper-slide client-box text-center">
-                            <a href=""><img :src="'/images/partners/microsoft_yvhhkh.png'" class="h-70px" alt=""></a>
+                            <a href=""><img :src="'/images/partners/microsoft_yvhhkh.webp'" class="h-70px" alt=""></a>
                         </div>
                         <div class="swiper-slide client-box text-center">
-                            <a href=""><img :src="'/images/partners/sharepoint_cqv5pe.png'" class="h-70px" alt=""></a>
+                            <a href=""><img :src="'/images/partners/sharepoint_cqv5pe.webp'" class="h-70px" alt=""></a>
                         </div>
+                        <!-- duplicated slides so Swiper loop mode has enough items -->
+                        <div class="swiper-slide client-box text-center">
+                            <a href=""><img :src="'/images/partners/auraportal_lixltc.webp'" class="h-70px" alt=""></a>
                         </div>
+                        <div class="swiper-slide client-box text-center">
+                            <a href=""><img :src="'/images/partners/BCabs-logo_nndavy.webp'" class="h-70px" alt=""></a>
+                        </div>
+                        <div class="swiper-slide client-box text-center">
+                            <a href=""><img :src="'/images/partners/lms365_kq89rs.webp'" class="h-70px" alt=""></a>
+                        </div>
+                        <div class="swiper-slide client-box text-center">
+                            <a href=""><img :src="'/images/partners/microsoft_yvhhkh.webp'" class="h-70px" alt=""></a>
+                        </div>
+                        <div class="swiper-slide client-box text-center">
+                            <a href=""><img :src="'/images/partners/sharepoint_cqv5pe.webp'" class="h-70px" alt=""></a>
+                        </div>
+                    </div>
                 </div>
                  </div>
         </section>
@@ -167,7 +183,7 @@
         <div class="container-fluid p-0"> 
             <div class="row align-items-center g-0">
                 <div class="col-xl-6 col-lg-6 position-relative top-minus-2px md-mb-30px" data-anime='{ "effect": "slide", "color": "rgb(31,34,40)", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay":500}'> 
-                    <img :src="'/images/tech.jpg'" class="border-radius-rb-50px w-100" alt="">
+                    <img :src="'/images/tech.webp'" class="border-radius-rb-50px w-100" alt="">
                 </div>
                 <div class="col-xl-4 col-lg-6 offset-xl-1 lg-ps-15px lg-pe-15px text-center text-lg-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'> 
                     <span class="fs-16 text-uppercase text-gradient-san-blue-new-york-red fw-700 mb-10px ls-1px d-inline-block">About ECR</span>
@@ -257,37 +273,37 @@
             <div class="row row-cols-1 row-cols-lg-4 row-cols-md-4 clients-style-04" data-anime='{"opacity": [0,1], "duration": 400, "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <div class="col text-center border-end border-bottom border-color-transparent-dark-very-light sm-border-end-0 transition-inner-all pt-40px pb-40px sm-pt-30px sm-pb-30px">
                     <div class="client-box">
-                        <a href="#"><img :src="'/images/products/qik.png'" alt="" /></a>
+                        <a href="#"><img :src="'/images/products/qik.webp'" alt="" /></a>
                     </div>
                 </div>
                
                 <div class="col text-center border-end border-bottom border-color-transparent-dark-very-light sm-border-end-0 transition-inner-all pt-40px pb-40px sm-pt-30px sm-pb-30px">
                     <div class="client-box">
-                        <a href="#"><img :src="'/images/products/bcabs.png'" alt="" /></a>
+                        <a href="#"><img :src="'/images/products/bcabs.webp'" alt="" /></a>
                     </div>
                 </div>
               
                 <div class="col text-center border-end border-bottom border-color-transparent-dark-very-light sm-border-end-0 transition-inner-all pt-40px pb-40px sm-pt-30px sm-pb-30px">
                     <div class="client-box">
-                        <a href="#"><img :src="'/images/products/Bookamia1.png'" alt="" /></a>
+                        <a href="#"><img :src="'/images/products/Bookamia1.webp'" alt="" /></a>
                     </div>
                 </div>
                 
                 <div class="col text-center border-bottom border-color-transparent-dark-very-light sm-border-end-0 transition-inner-all pt-40px pb-40px sm-pt-30px sm-pb-30px">
                     <div class="client-box">
-                        <a href="#"><img :src="'/images/products/jacana.png'" alt="" width="150px" /></a>
+                        <a href="#"><img :src="'/images/products/jacana.webp'" alt="" width="150px" /></a>
                     </div>
                 </div>
                 
                 <div class="col text-center border-end border-color-transparent-dark-very-light sm-border-end-0 sm-border-bottom transition-inner-all pt-40px pb-40px sm-pt-30px sm-pb-30px">
                     <div class="client-box">
-                        <a href="#"><img :src="'/images/products/checkartisan.png'" alt="" /></a>
+                        <a href="#"><img :src="'/images/products/checkartisan.webp'" alt="" /></a>
                     </div>
                 </div>
                 
                 <div class="col text-center border-end border-color-transparent-dark-very-light sm-border-end-0 sm-border-bottom transition-inner-all pt-40px pb-40px sm-pt-30px sm-pb-30px">
                     <div class="client-box">
-                        <a href="#"><img :src="'/images/products/ecr_academy.png'" alt="" /></a>
+                        <a href="#"><img :src="'/images/products/ecr_academy.webp'" alt="" /></a>
                     </div>
                 </div>
                 
@@ -306,12 +322,12 @@
     <!-- end section -->
      
     <!-- start section -->
-    <!-- <section class="cover-background p-0" style="background-image: url('/images/gradient.png')">
+    <!-- <section class="cover-background p-0" style="background-image: url('/images/gradient.webp')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 align-self-end order-2 order-lg-1" data-anime='{ "el": "childs", "translateY": [100, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <div class="outside-box-left-5 outside-box-right-5">
-                        <img :src="'/images/laptop.png'"   alt="">
+                        <img :src="'/images/laptop.webp'"   alt="">
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 offset-xl-1 pt-8 pb-10 align-self-end order-1 order-lg-2" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
@@ -480,7 +496,7 @@
         <!-- <section class="bg-dark-gray ">
             <div class="container overlap-section">
                 <div class="row mb-8 g-0" data-anime='{"el": "childs", "translateY": [30, 0], "perspective": [1200,1200], "scale": [1.05, 1], "rotateX": [30, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <div class="col-12 cover-background position-relative one-third-screen p-50px sm-p-30px overlap-image" style="background-image: url(/images/staff.jpg)">
+                    <div class="col-12 cover-background position-relative one-third-screen p-50px sm-p-30px overlap-image" style="background-image: url(/images/staff.webp)">
                         <div class="row justify-content-end align-items-end h-100 g-0">
                             <div class="col-12 col-lg-6 col-md-8 progress-bar-style-01 bg-base-color">
                                 <div class="p-14 lg-p-10">
@@ -612,17 +628,17 @@
                             <div v-for="blog in blogs" :key="blog.id" class="swiper-slide">
                                 <div class="card border-0 border-radius-4px box-shadow-extra-large box-shadow-extra-large-hover">
                                     <div class="blog-image">
-                                        <router-link :to="`/insights/${blog.slug}`" class="d-block"><img :src="blog.image" alt="" /></router-link>
+                                        <router-link :to="`/insights/${blog.slug || blog.id}`" class="d-block"><img :src="blog.image" alt="" /></router-link>
                                         <div class="blog-categories">
-                                            <a href="#" class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase alt-font fw-700">{{ blog.category.name }}</a>
+                                            <a href="#" class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase alt-font fw-700">{{ blog.category?.name }}</a>
                                         </div>
                                     </div>
                                     <div class="card-body p-12">
-                                        <router-link :to="`/insights/${blog.slug}`" class="card-title mb-15px fw-600 fs-17 lh-26 text-dark-gray d-inline-block blog-title-link">{{ blog.title }}</router-link>
+                                        <router-link :to="`/insights/${blog.slug || blog.id}`" class="card-title mb-15px fw-600 fs-17 lh-26 text-dark-gray d-inline-block blog-title-link">{{ blog.title }}</router-link>
                                         <div class="author d-flex justify-content-center align-items-center position-relative overflow-hidden fs-14 text-uppercase">
                                             <div class="me-auto">
                                                 <span class="blog-date fw-500 d-inline-block">{{ formatDate(blog.createdAt || blog.created_at) }}</span>
-                                                <div class="d-inline-block author-name">By <a href="#" class="text-dark-gray text-decoration-line-bottom fw-600 author-link">{{ blog.user.name }}</a></div>
+                                                <div class="d-inline-block author-name">By <a href="#" class="text-dark-gray text-decoration-line-bottom fw-600 author-link">{{ blog.user?.name }}</a></div>
                                             </div>
                                             <!-- <div class="like-count">
                                                 <a href="#"><i class="fa-regular fa-heart text-red d-inline-block"></i><span class="text-dark-gray align-middle fw-600">{{ blog.likes_count }}</span></a>
@@ -736,11 +752,34 @@
 
 <script setup>
 import HeroSection from '@/components/HeroSection.vue';
-import { onMounted, ref, computed, onUnmounted } from 'vue';
+import { onMounted, ref, computed, onUnmounted, nextTick } from 'vue';
 import Swiper from 'swiper';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css/bundle';
 import api from '../services/api';
+import { useSeo, orgSchema } from '@/composables/useSeo';
+
+useSeo({
+  title: 'Digital Solutions & IT Consultancy',
+  description: 'ECR Technology Services — a trusted ICT partner providing education & training, software development, data analytics, IT strategy consulting, graphics designing, and cyber security solutions in Nigeria and the UK.',
+  url: 'https://www.ecr-ts.com/',
+  schema: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: 'ECR Technology Services',
+        url: 'https://www.ecr-ts.com/',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://www.ecr-ts.com/search?q={search_term_string}',
+          'query-input': 'required name=search_term_string'
+        }
+      },
+      orgSchema
+    ]
+  }
+});
 
 const blogs = ref([]);
 const loading = ref(false);
@@ -834,9 +873,11 @@ const stopAutoplay = () => {
 };
 
 const formatDate = (dateString) => {
-    if (!dateString) return 'Invalid Date';
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return 'Invalid Date';
+    if (!dateString) return '';
+    // Laravel returns "2024-01-15 10:30:00" (space) — replace with T for cross-browser parsing
+    const normalized = String(dateString).replace(' ', 'T');
+    const date = new Date(normalized);
+    if (isNaN(date.getTime())) return '';
     return date.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
@@ -847,7 +888,7 @@ const formatDate = (dateString) => {
 const initializeInsightsSwiper = (blogsCount) => {
   new Swiper('.insights-swiper', {
     modules: [Autoplay, Navigation, Pagination],
-    loop: blogsCount >= 4, // Conditionally enable loop mode
+    loop: false, // navigation buttons handle prev/next; loop needs 2x slidesPerView slides which can't be guaranteed
     spaceBetween: 30,
     autoplay: {
         delay: 3000,
@@ -887,7 +928,8 @@ const fetchBlogs = async () => {
     try {
         const response = await api.get('/blogs');
         blogs.value = response.data;
-        initializeInsightsSwiper(blogs.value.length); // Initialize Swiper after fetching blogs
+        await nextTick(); // Wait for Vue to render the blog slides into the DOM
+        initializeInsightsSwiper(blogs.value.length);
     } catch (error) {
         console.error('Failed to fetch blogs:', error);
     } finally {
@@ -900,15 +942,15 @@ onMounted(() => {
   new Swiper('.clients-logo-swiper', {
     modules: [Autoplay],
     loop: true,
-    slidesPerView: 'auto',
+    slidesPerView: 2,
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-      delay: 1,
+      delay: 2000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
-    speed: 4000,
+    speed: 800,
   });
 
   fetchBlogs();
@@ -962,15 +1004,12 @@ onUnmounted(() => {
 }
 }
 
-/* <-- ADDED: Styles for the new logo swiper --> */
-.clients-logo-swiper .swiper-slide {
-  width: auto; /* Lets swiper determine width based on content */
-  max-width: 150px; /* Prevents logos from being too wide */
-}
-
-.clients-logo-swiper .swiper-wrapper {
-  /* This makes the continuous scroll animation smooth */
-  transition-timing-function: linear;
+.clients-logo-swiper .swiper-slide img {
+  max-height: 70px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Add padding to the bottom of the slider to make space for pagination */

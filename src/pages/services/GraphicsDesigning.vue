@@ -19,11 +19,11 @@
                 <div class="row align-items-center justify-content-center" data-anime='{ "perspective": [1200,1200] }'>
                     <div class="col-lg-6 md-mb-50px" data-anime='{ "translateY": [0, 0], "zoom": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
                         <figure class="position-relative m-0">
-                            <img src="/images/graphic1.jpg" alt="Graphics Designing" class="w-100 border-radius-5px">
+                            <img src="/images/graphic1.webp" alt="Graphics Designing" class="w-100 border-radius-5px">
                         </figure>
                     </div>
                     <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-md-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-12 lh-40 fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-flex justify-content-center justify-content-md-start"><i class="bi bi-palette fs-16 me-5px"></i>Creative Design</span>
+                        <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-12 lh-40 fw-700 border-radius-100px bg-dark-gray d-inline-flex justify-content-center justify-content-md-start"><i class="bi bi-palette fs-16 me-5px"></i>Creative Design</span>
                         <h3 class="text-dark-gray fw-700 ls-minus-1px">Stunning visuals for your brand.</h3>
                         <p class="w-95 md-w-100">Our team of creative designers helps you build a strong brand identity with compelling visuals that resonate with your audience.</p>
                         
@@ -111,19 +111,19 @@
                 <div class="row align-items-center mt-8 sm-mt-40px" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <div class="col-12">
                         <div class="bg-very-light-gray p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
-                            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1"><img src="/images/faq_icon.png" alt=""></div>
+                            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1"><img src="/images/faq_icon.webp" alt=""></div>
                             <h3 class="fw-700 text-dark-gray ls-minus-1px">Frequently asked questions.</h3> 
-                            <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="fa-solid fa-minus" data-inactive-icon="fa-solid fa-plus">
+                            <div class="accordion accordion-style-02">
                                 <!-- start accordion item -->
-                                <div class="accordion-item active-accordion">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 1 }">
                                     <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01" aria-expanded="true" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 1 ? null : 1">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="feather icon-feather-minus fs-20"></i><span class="fs-17 fw-500">What graphic design services do you offer?</span>
+                                                <i class="fs-20" :class="activeAccordion === 1 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">What graphic design services do you offer?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 1 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
                                             <p class="w-90 sm-w-95 xs-w-100">We offer a wide range of services, including logo design, branding, marketing materials, web graphics, and more to help your business stand out.</p>
                                         </div>
@@ -131,15 +131,15 @@
                                 </div>
                                 <!-- end accordion item -->
                                 <!-- start accordion item -->
-                                <div class="accordion-item">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 2 }">
                                     <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02" aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 2 ? null : 2">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="feather icon-feather-plus fs-20"></i><span class="fs-17 fw-500">How much does it cost?</span>
+                                                <i class="fs-20" :class="activeAccordion === 2 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">How much does it cost?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-02" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 2 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
                                             <p class="w-90 sm-w-95 xs-w-100">Our pricing varies depending on the scope of the project. We offer competitive rates and can provide a custom quote based on your needs.</p>
                                         </div>
@@ -147,15 +147,15 @@
                                 </div>
                                 <!-- end accordion item -->
                                 <!-- start accordion item -->
-                                <div class="accordion-item">
+                                <div class="accordion-item" :class="{ 'active-accordion': activeAccordion === 3 }">
                                     <div class="accordion-header border-bottom border-color-transparent">
-                                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03" aria-expanded="false" data-bs-parent="#accordion-style-02">
+                                        <a style="cursor:pointer;" @click.prevent="activeAccordion = activeAccordion === 3 ? null : 3">
                                             <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                                <i class="feather icon-feather-plus fs-20"></i><span class="fs-17 fw-500">What is the design process like?</span>
+                                                <i class="fs-20" :class="activeAccordion === 3 ? 'fa-solid fa-minus' : 'fa-solid fa-plus'"></i><span class="fs-17 fw-500">What is the design process like?</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div id="accordion-style-02-03" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
+                                    <div class="accordion-collapse collapse" :class="{ 'show': activeAccordion === 3 }">
                                         <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
                                             <p class="w-90 sm-w-95 xs-w-100">We follow a collaborative process that includes discovery, design, and refinement to ensure the final product meets your expectations.</p>
                                         </div>
@@ -184,6 +184,16 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+const activeAccordion = ref(1);
+
+import { useSeo } from '@/composables/useSeo';
+useSeo({
+  title: 'Graphics Designing - Brand Identity & Visual Design',
+  description: 'ECR Technology Services delivers creative graphic design services including logo design, brand identity, marketing collateral, web graphics, and print design to elevate your brand.',
+  url: 'https://www.ecr-ts.com/services/graphics-designing',
+  schema: { '@context': 'https://schema.org', '@type': 'Service', name: 'Graphics Designing', provider: { '@type': 'Organization', name: 'ECR Technology Services', url: 'https://www.ecr-ts.com' }, description: 'Creative graphic design and brand identity services.', url: 'https://www.ecr-ts.com/services/graphics-designing' }
+});
 const openQuoteForm = () => {
     if (typeof window !== 'undefined' && window.openQuoteForm) {
         window.openQuoteForm();

@@ -76,7 +76,7 @@ const togglePasswordVisibility = () => {
 </script>
 
 <template>  
-     <div class="account-page" style="background-image: url(/images/img-2.jpg); background-size: cover; background-position: center;">
+     <div class="account-page" style="background-image: url(/images/img-2.webp); background-size: cover; background-position: center;">
             <div class="container-fluid p-0">        
                 <div class="row align-items-center g-0">
                     
@@ -89,7 +89,7 @@ const togglePasswordVisibility = () => {
                                         <div class="mb-0 border-0 p-md-5 p-lg-0 p-4">
                                             <div class="mb-4 p-0 text-center">
                                                 <a class='auth-logo' href=''>
-                                                    <img src="/images/logo.png" alt="logo-dark" class="mx-auto" height="28"/>
+                                                    <img src="/images/logo.webp" alt="logo-dark" class="mx-auto" height="28"/>
                                                 </a>
                                             </div>
 

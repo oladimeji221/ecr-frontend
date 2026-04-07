@@ -1,6 +1,6 @@
 <template>
      
-    <!-- <section class="pb-0 top-space-padding bg-dark-gray full-screen border-top position-relative md-h-700px sm-h-600px sm-pb-70px" data-parallax-background-ratio="0.3" style="background-image: url('//images/hero_img.png')">
+    <!-- <section class="pb-0 top-space-padding bg-dark-gray full-screen border-top position-relative md-h-700px sm-h-600px sm-pb-70px" data-parallax-background-ratio="0.3" style="background-image: url('//images/hero_img.webp')">
        
         <div class="container h-100">
             <div class="row align-items-center h-100">
@@ -56,14 +56,14 @@
                                 <h4 class="lh-40 alt-font text-dark-gray fw-600 ls-minus-2px image-mask cover-background mb-0" style="background-image: url('/images/demo-digital-agency-text-img.jpg')">World-class digital media agency.</h4>
                             </div>
                         </div> -->
-                        <!-- <div class="swiper h-100 banner-slider sm-h-450px swiper-light-pagination" data-slider-options='{ "slidesPerView": 1, "loop": true, "pagination": { "el": ".swiper-pagination-bullets", "clickable": true }, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "autoplay": { "delay": 4000, "stopOnLastSlide": true, "disableOnInteraction": false },"keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "fade" }'>
+                        <div class="swiper h-100 banner-slider sm-h-450px swiper-light-pagination" data-slider-options='{ "slidesPerView": 1, "loop": false, "pagination": { "el": ".swiper-pagination-bullets", "clickable": true }, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "autoplay": { "delay": 4000, "stopOnLastSlide": false, "disableOnInteraction": false },"keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "fade" }'>
                             <div class="swiper-wrapper">
 
                              
                                 <div class="swiper-slide">
                                     <a href="https://checkartisan.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/checkartisan.png');">
+                                             style="background-image:url('/images/products/checkartisan.webp');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>
@@ -71,7 +71,7 @@
                                  <div class="swiper-slide">
                                     <a href="https://qikpharma.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/qikPharma.png');">
+                                             style="background-image:url('/images/products/qikPharma.webp');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>
@@ -79,7 +79,7 @@
                                  <div class="swiper-slide">
                                     <a href="https://ecracademy.com" target="_blank" class="d-block w-100 h-100">
                                         <div class="position-absolute left-0px top-0px w-100 h-100 cover-background"
-                                             style="background-image:url('/images/products/ecracademy.png');">
+                                             style="background-image:url('/images/products/ecracademy.webp');">
                                             <div class="dark-overlay"></div>
                                         </div>
                                     </a>
@@ -87,7 +87,7 @@
                                 
                             </div>
                            
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

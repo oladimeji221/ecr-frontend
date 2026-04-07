@@ -1,153 +1,114 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuth } from '../composables/useAuth'
-import Home from '../pages/Home.vue'
-import Product from '../pages/Product.vue'
-import About from '../pages/About.vue'
-import CompanyOverview from '../pages/About/CompanyOverview.vue'
-import OurTeams from '../pages/About/OurTeams.vue'
-import Partners from '../pages/About/Partners.vue'
-import Careers from '../pages/About/Careers.vue'
-import Education from '../pages/Education.vue'
-import News from '../pages/Insights/News.vue'
-import CaseStudies from '../pages/Insights/CaseStudies.vue'
-import WhitePapers from '../pages/Insights/WhitePapers.vue'
-import Trends from '../pages/Insights/Trends.vue'
-import SingleInsights from '../pages/SingleInsights.vue'
-import Contact from '../pages/Contact.vue'
-import Appointment from '../pages/Appointment.vue'
-import Services from '../pages/Services.vue'
-import Blogs from '../pages/Dashboard/Blogs.vue'
-import Categories from '../pages/Dashboard/Categories.vue'
-import CreateBlog from '../pages/Dashboard/CreateBlog.vue'
-import ManageComments from '../pages/Dashboard/ManageComments.vue'
-import Profile from '../pages/Dashboard/Profile.vue'
-
-
-import EducationTraining from '../pages/services/EducationTraining.vue'
-import SoftwareDevelopment from '../pages/services/SoftwareDevelopment.vue'
-import DataAnalytics from '../pages/services/DataAnalytics.vue'
-import ITStrategyConsulting from '../pages/services/ITStrategyConsulting.vue'
-import GraphicsDesigning from '../pages/services/GraphicsDesigning.vue'
-import CyberSecuritySolution from '../pages/services/CyberSecuritySolution.vue'
-
-import Login from '../pages/Auth/Login.vue'
-import Register from '../pages/Auth/Register.vue'
-import GuestRegister from '../pages/Auth/GuestRegister.vue'
-import GuestLogin from '../pages/Auth/GuestLogin.vue'
-import ForgotPassword from '../pages/Auth/ForgotPassword.vue'
-import ResetPassword from '../pages/Auth/ResetPassword.vue'
-
 // Guest Dashboard
 import GuestDashboardLayout from '../layouts/GuestDashboardLayout.vue'
-import GuestDashboard from '../pages/GuestDashboard/Overview.vue'
-
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('../pages/Home.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/product',
     name: 'Product',
-    component: Product,
+    component: () => import('../pages/Product.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/about',
     name: 'About',
-    component: About,
+    component: () => import('../pages/About.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/about/company-overview',
     name: 'CompanyOverview',
-    component: CompanyOverview,
+    component: () => import('../pages/About/CompanyOverview.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/about/our-teams',
     name: 'OurTeams',
-    component: OurTeams,
+    component: () => import('../pages/About/OurTeams.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/about/partners',
     name: 'Partners',
-    component: Partners,
+    component: () => import('../pages/About/Partners.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/about/careers',
     name: 'Careers',
-    component: Careers,
+    component: () => import('../pages/About/Careers.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services/education-training',
     name: 'EducationTraining',
-    component: EducationTraining,
+    component: () => import('../pages/services/EducationTraining.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services/software-development',
     name: 'SoftwareDevelopment',
-    component: SoftwareDevelopment,
+    component: () => import('../pages/services/SoftwareDevelopment.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services/data-analytics',
     name: 'DataAnalytics',
-    component: DataAnalytics,
+    component: () => import('../pages/services/DataAnalytics.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services/it-strategy-consulting',
     name: 'ITStrategyConsulting',
-    component: ITStrategyConsulting,
+    component: () => import('../pages/services/ITStrategyConsulting.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services/graphics-designing',
     name: 'GraphicsDesigning',
-    component: GraphicsDesigning,
+    component: () => import('../pages/services/GraphicsDesigning.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services/cyber-security-solution',
     name: 'CyberSecuritySolution',
-    component: CyberSecuritySolution,
+    component: () => import('../pages/services/CyberSecuritySolution.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/education',
     name: 'Education',
-    component: Education,
+    component: () => import('../pages/Education.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/insights/news',
     name: 'News',
-    component: News,
+    component: () => import('../pages/Insights/News.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/insights/case-studies',
     name: 'CaseStudies',
-    component: CaseStudies,
+    component: () => import('../pages/Insights/CaseStudies.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/insights/white-papers',
     name: 'WhitePapers',
-    component: WhitePapers,
+    component: () => import('../pages/Insights/WhitePapers.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/insights/trends',
     name: 'Trends',
-    component: Trends,
+    component: () => import('../pages/Insights/Trends.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
@@ -159,25 +120,25 @@ const routes = [
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact,
+    component: () => import('../pages/Contact.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/appointment',
     name: 'Appointment',
-    component: Appointment,
+    component: () => import('../pages/Appointment.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/services',
     name: 'Services',
-    component: Services,
+    component: () => import('../pages/Services.vue'),
     meta: { layout: 'MainLayout' }
   },
   {
     path: '/insights/:slug',
     name: 'SingleInsights',
-    component: SingleInsights,
+    component: () => import('../pages/SingleInsights.vue'),
     meta: { layout: 'InsightLayout' }
   }, {
     path: '/dashboard/blogs',
@@ -188,19 +149,25 @@ const routes = [
   {
     path: '/dashboard/categories',
     name: 'Categories',
-    component: Categories,
+    component: () => import('../pages/Dashboard/Categories.vue'),
     meta: { layout: 'MainLayout', requiresAuth: true, requiresAdmin: true }
   },
   {
     path: '/dashboard/create-blog',
     name: 'CreateBlog',
-    component: CreateBlog,
+    component: () => import('../pages/Dashboard/CreateBlog.vue'),
+    meta: { layout: 'MainLayout', requiresAuth: true }
+  },
+  {
+    path: '/dashboard/edit-blog/:slug',
+    name: 'EditBlog',
+    component: () => import('../pages/Dashboard/EditBlog.vue'),
     meta: { layout: 'MainLayout', requiresAuth: true }
   },
   {
     path: '/dashboard/manage-comments',
     name: 'ManageComments',
-    component: ManageComments,
+    component: () => import('../pages/Dashboard/ManageComments.vue'),
     meta: { layout: 'MainLayout', requiresAuth: true, requiresAdmin: true }
   },
   {
@@ -225,25 +192,25 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login,
+    component: () => import('../pages/Auth/Login.vue'),
     meta: { layout: 'AuthLayout' }
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register,
+    component: () => import('../pages/Auth/Register.vue'),
     meta: { layout: 'AuthLayout' }
   },
   {
     path: '/guest-register',
     name: 'GuestRegister',
-    component: GuestRegister,
+    component: () => import('../pages/Auth/GuestRegister.vue'),
     meta: { layout: 'GuestDashboardLayout' }
   },
   {
     path: '/guest-login',
     name: 'GuestLogin',
-    component: GuestLogin,
+    component: () => import('../pages/Auth/GuestLogin.vue'),
     meta: { layout: 'GuestDashboardLayout' }
   },
   // Guest Dashboard Routes - All nested routes automatically use GuestDashboardLayout
@@ -254,7 +221,7 @@ const routes = [
       {
         path: 'dashboard',
         name: 'GuestDashboard',
-        component: GuestDashboard,
+        component: () => import('../pages/GuestDashboard/Overview.vue'),
       },
       // Add more guest dashboard pages here
       // Example:
@@ -273,13 +240,13 @@ const routes = [
   {
     path: '/forgot-password',
     name: 'ForgotPassword',
-    component: ForgotPassword,
+    component: () => import('../pages/Auth/ForgotPassword.vue'),
     meta: { layout: 'AuthLayout' }
   },
   {
     path: '/reset-password',
     name: 'ResetPassword',
-    component: ResetPassword,
+    component: () => import('../pages/Auth/ResetPassword.vue'),
     meta: { layout: 'AuthLayout' }
   },
   {
